@@ -27,9 +27,6 @@
 // console.log (all);
 
 
-
-
-
 // for (const member of family) {
 //   family[0].age = 20;
 //   family[1].age = 30;
@@ -41,7 +38,7 @@
 
 const family = [
   { name: "Ann", online: true },
-  { name: "Max", online: true },
+  { name: "Max", online: false },
   { name: "Jara", online: false },
   { name: "Thorin", online: true },
 ];
@@ -66,15 +63,31 @@ const family = [
 
 // console.log(getAllFamily(family));
 
-function geOnlineFriends(allFriends) {
-  const isOnline = [];
-  for (const fam of family) {
-    if (!fam.online) {
-      isOnline.push(fam);
+// function geOnlineFriends(allFriends) {
+//   const isOnline = [];
+//   for (const fam of family) {
+//     if (!fam.online) {
+//       isOnline.push(fam);
+//     }
+//   }
+//    return isOnline;
+// }
+
+// console.log(geOnlineFriends(family));
+
+function getFreindsByStatus(allFriends) {
+  const status = {
+    online: [],
+    offline: [],
+  };
+  for (const fam of allFriends) {
+    if (fam.online) status.online.push(fam.name);
+    else {
+      status.offline.push(fam.name);
     }
   }
-   return isOnline;
+
+  return status;
 }
 
-
-console.log(geOnlineFriends(family));
+console.log(getFreindsByStatus(family));
