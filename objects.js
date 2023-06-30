@@ -226,6 +226,34 @@
 // console.log(playlist["genre"]);
 
 
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//   // Change code below this line
+//   let valuesArray = [];
+
+//   for (const product of products) {
+//     if (product[propName]) {
+//       valuesArray.push(product[propName]);
+//     }
+//   }
+
+//   return valuesArray;
+
+//   // Change code above this line
+// }
+
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("category"));
+
+
 const products = [
   { name: "Radar", price: 1300, quantity: 4 },
   { name: "Scanner", price: 2700, quantity: 3 },
@@ -233,27 +261,16 @@ const products = [
   { name: "Grip", price: 1200, quantity: 9 },
 ];
 
-function getAllPropValues(propName) {
-  // Change code below this line
-  let valuesArray = [];
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
 
-  for (const product of products) {
-    if (product[propName]) {
-      valuesArray.push(product[propName]);
-    }
-  }
 
-  return valuesArray;
-
-  // Change code above this line
+  
+  // Пиши код выше этой строки
 }
 
-
-
-
-
-
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("category"));
+console.log(calculateTotalPrice("Blaster"));
+console.log(calculateTotalPrice("Radar"));
+console.log(calculateTotalPrice("Droid"));
+console.log(calculateTotalPrice("Grip"));
+console.log(calculateTotalPrice("Scanner"));
