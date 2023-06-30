@@ -233,25 +233,18 @@
 //   { name: "Grip", price: 1200, quantity: 9 },
 // ];
 
-// function getAllPropValues(propName) {
+function getAllPropValues(propName) {
 //   // Change code below this line
-//   let valuesArray = [];
-
-//   for (const product of products) {
-//     if (product[propName]) {
-//       valuesArray.push(product[propName]);
-//     }
-//   }
-
-//   return valuesArray;
+  return (!products.length || !(propName in products[0]))? 
+    [] : products.map(i => i[propName]);
 
 //   // Change code above this line
-// }
+}
 
-// console.log(getAllPropValues("name"));
-// console.log(getAllPropValues("quantity"));
-// console.log(getAllPropValues("price"));
-// console.log(getAllPropValues("category"));
+console.log(getAllPropValues("name"));
+console.log(getAllPropValues("quantity"));
+console.log(getAllPropValues("price"));
+console.log(getAllPropValues("category"));
 
 
 const products = [
