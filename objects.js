@@ -110,50 +110,51 @@
 
 
 
-// const cart = {
-//   items: [],
-//   getItems() {
-//     return this.items;
-//   },
-//   add(product) {
-//     return this.items.push(product);
-//   },
-//   removeProduct(productName) {
-//     let newArray = [];
-//     for (const item of this.items) {
-//       newArray.push(item.name);
-//     }
-//     const toDelete = newArray.indexOf(productName);
-//     return this.items.splice(toDelete, 1);
-//   },
-//   clear() {
-//    return this.items = [];
-//   },
-//   countTotalPrice() {
-//     let totalPrice = 0;
-//     for (const product of this.items) {
-//       totalPrice += product.price;
-//     }
-//     return totalPrice;
-//   },
-//   increaseQuantity(productName) {
-//    this.items.quantity += 1;
-//   },
-//   descreaseQuantity(productName) { },
+const cart = {
+  items: [],
+  getItems() {
+    return this.items;
+  },
+  add(product) {
+    return this.items.push(product);
+  },
+  removeProduct(productName) {
+    let newArray = [];
+    for (const item of this.items) {
+      newArray.push(item.name);
+    }
+    const toDelete = newArray.indexOf(productName);
+    return this.items.splice(toDelete, 1);
+  },
+  clear() {
+   return this.items = [];
+  },
+  countTotalPrice() {
+    let totalPrice = 0;
+    for (const product of this.items) {
+      totalPrice += product.price;
+    }
+    return totalPrice;
+  },
+  increaseQuantity(productName) {
+   this.items.quantity += 1;
+  },
+  descreaseQuantity(productName) { },
   
-// };
+};
 
-// cart.add({ name: "Warcraft", price: 10 });
-// cart.add({ name: "Starcraft", price: 20 });
-// cart.add({ name: 'Skyrim', price: 30 });
-// cart.add({ name: 'StarWars', price: 40 });
+cart.add({ name: "Warcraft", price: 10 });
+cart.add({ name: "Starcraft", price: 20 });
+cart.add({ name: 'Skyrim', price: 30 });
+cart.add({ name: 'StarWars', price: 40 });
 
-// // console.table(cart.removeProduct("StarWars"));
 
-// // console.table(cart.clear());
-// // console.log(cart.countTotalPrice());
-// console.log(cart.increaseQuantity('Warcraft'));
-// console.table(cart.getItems());
+cart.removeProduct('Skyrim');
+console.table(cart.getItems());
+
+console.log(cart.countTotalPrice());
+
+
 
 
 
@@ -233,37 +234,96 @@
 //   { name: "Grip", price: 1200, quantity: 9 },
 // ];
 
-function getAllPropValues(propName) {
-//   // Change code below this line
-  return (!products.length || !(propName in products[0]))? 
-    [] : products.map(i => i[propName]);
+// function getAllPropValues(propName) {
+// //   // Change code below this line
+//   return (!products.length || !(propName in products[0]))?
+//     [] : products.map(i => i[propName]);
 
-//   // Change code above this line
-}
+// //   // Change code above this line
+// }
 
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("category"));
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("category"));
 
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
-  // Пиши код ниже этой строки
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
 
 
   
-  // Пиши код выше этой строки
-}
+//   // Пиши код выше этой строки
+// }
 
-console.log(calculateTotalPrice("Blaster"));
-console.log(calculateTotalPrice("Radar"));
-console.log(calculateTotalPrice("Droid"));
-console.log(calculateTotalPrice("Grip"));
-console.log(calculateTotalPrice("Scanner"));
+// console.log(calculateTotalPrice("Blaster"));
+// console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
+
+
+// const authors = {
+//   first: 9,
+//   second: 3,
+//   third: 4,
+//   fourth: 5,
+// }
+
+// const entries = Object.entries(authors);
+
+
+// for (const entry of entries) {
+//   const name = entry[0];
+//   const value = entry[1];
+//   console.log(name, value);
+
+// }
+
+
+
+//    const playlist = {
+//      artist: "Progigy",
+//      album: "The Fat of the Land",
+//      tracks: ["track1", "track2", "track3", "track4", "track5", "track6"],
+//      trackCount: 6,
+//      rating: 10,
+//      year: "1997",
+//      genre: "rave",
+//      stats: {
+//        followers: 84,
+//        views: 400,
+//        likes: 777,
+//      },
+// };
+   
+// console.log(playlist);
+
+// const { artist: art, rating, year, ...restKeys } = playlist;
+
+// console.log(art, rating, year);
+// console.log(restKeys);
+
+
+// const playlistInfo = function ({ artist: art, rating, year, ...restKeys }) {
+//   return `<div>
+//   <ul>
+//   <li>${art}</li>
+//   <li>${rating}</li>
+//   <li>${year}</li>
+//   </ul>
+//   </div>`;
+
+// };
+
+
+
+
+// document.body.insertAdjacentHTML("afterbegin", playlistInfo(playlist));
