@@ -110,71 +110,66 @@
 
 
 
-const cart = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    for (const item of this.items) {
-      if (item.name === product.name) {
-        item.quantity += 1;
-        return;
-      }
-    }
-    const newObject = {
-      ...product,
-      quantity: 1,
-    };
+// const cart = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
+//     for (const item of this.items) {
+//       if (item.name === product.name) {
+//         item.quantity += 1;
+//         return;
+//       }
+//     }
+//     const newObject = {
+//       ...product,
+//       quantity: 1,
+//     };
 
-    return this.items.push(newObject);
-  },
-  removeProduct(productName) {
-    const { items } = this;
+//     return this.items.push(newObject);
+//   },
+//   removeProduct(productName) {
+//     const { items } = this;
 
-    console.log(items);
-    let newArray = [];
-    for (const item of items) {
-      newArray.push(item.name);
-    }
-    const toDelete = newArray.indexOf(productName);
-    return items.splice(toDelete, 1);
-  },
-  clear() {
-    return (this.items = []);
-  },
-  countTotalPrice() {
-    let totalPrice = 0;
-    for (const { price, quantity } of this.items) {
-      totalPrice += price * quantity;
-    }
-    return totalPrice;
-  },
-  increaseQuantity(productName) {
+//     console.log(items);
+//     let newArray = [];
+//     for (const item of items) {
+//       newArray.push(item.name);
+//     }
+//     const toDelete = newArray.indexOf(productName);
+//     return items.splice(toDelete, 1);
+//   },
+//   clear() {
+//     return (this.items = []);
+//   },
+//   countTotalPrice() {
+//     let totalPrice = 0;
+//     for (const { price, quantity } of this.items) {
+//       totalPrice += price * quantity;
+//     }
+//     return totalPrice;
+//   },
+//   increaseQuantity(productName) {
    
-  },
-  descreaseQuantity(productName) { },
+//   },
+//   descreaseQuantity(productName) { },
   
-};
+// };
 
 
 
-cart.add({ name: "Warcraft", price: 10 });
-cart.add({ name: "Warcraft", price: 10 });
-cart.add({ name: "Starcraft", price: 20 });
-cart.add({ name: "Starcraft", price: 20 });
-cart.add({ name: "Starcraft", price: 20 });
-cart.add({ name: 'Skyrim', price: 30 });
-cart.add({ name: 'StarWars', price: 40 });
-cart.add({ name: "StarWars", price: 40 });
+// cart.add({ name: "Warcraft", price: 10 });
+// cart.add({ name: "Warcraft", price: 10 });
+// cart.add({ name: "Starcraft", price: 20 });
+// cart.add({ name: "Starcraft", price: 20 });
+// cart.add({ name: "Starcraft", price: 20 });
+// cart.add({ name: 'Skyrim', price: 30 });
+// cart.add({ name: 'StarWars', price: 40 });
+// cart.add({ name: "StarWars", price: 40 });
 
 
-console.table(cart.getItems());
-
-
-
-
-
+// console.table(cart.getItems());
 
 
 
@@ -346,3 +341,5 @@ console.table(cart.getItems());
 
 
 // document.body.insertAdjacentHTML("afterbegin", playlistInfo(playlist));
+
+
