@@ -116,43 +116,62 @@ const cart = {
     return this.items;
   },
   add(product) {
-    return this.items.push(product);
+    for (const item of this.items) {
+      if (item.name === product.name) {
+        item.quantity += 1;
+        return;
+      }
+    }
+    const newObject = {
+      ...product,
+      quantity: 1,
+    };
+
+    return this.items.push(newObject);
   },
   removeProduct(productName) {
+    const { items } = this;
+
+    console.log(items);
     let newArray = [];
-    for (const item of this.items) {
+    for (const item of items) {
       newArray.push(item.name);
     }
     const toDelete = newArray.indexOf(productName);
-    return this.items.splice(toDelete, 1);
+    return items.splice(toDelete, 1);
   },
   clear() {
-   return this.items = [];
+    return (this.items = []);
   },
   countTotalPrice() {
     let totalPrice = 0;
-    for (const product of this.items) {
-      totalPrice += product.price;
+    for (const { price, quantity } of this.items) {
+      totalPrice += price * quantity;
     }
     return totalPrice;
   },
   increaseQuantity(productName) {
-   this.items.quantity += 1;
+   
   },
   descreaseQuantity(productName) { },
   
 };
 
+
+
 cart.add({ name: "Warcraft", price: 10 });
+cart.add({ name: "Warcraft", price: 10 });
+cart.add({ name: "Starcraft", price: 20 });
+cart.add({ name: "Starcraft", price: 20 });
 cart.add({ name: "Starcraft", price: 20 });
 cart.add({ name: 'Skyrim', price: 30 });
 cart.add({ name: 'StarWars', price: 40 });
+cart.add({ name: "StarWars", price: 40 });
 
 
-cart.removeProduct('Skyrim');
 console.table(cart.getItems());
 
-console.log(cart.countTotalPrice());
+
 
 
 
