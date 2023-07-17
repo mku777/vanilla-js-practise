@@ -137,3 +137,46 @@
 
 // const upd = cards.splice(1, 1, "lol");
 // console.log(cards);
+
+// const numbers = [2, 4, 6, 8, 10, 13, 14, 15];
+
+// const newArr = numbers.forEach( (number, index, array) => {
+//    return console.log(`${number} plus ${index}`);
+// })
+
+// const doubleNumbers = numbers.map((number) => number *= 2);
+
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+
+// const newNames = products.map(
+//     product => (product.price = Math.round(product.price * 1.1))
+// );
+// console.log(newNames);
+
+// const nameToUpdate = "Droid";
+
+// const droidToUpdate = products.map((product) => {
+//   if (nameToUpdate === product.name) {
+//     return {
+//       ...product,
+//       quantity: (product.quantity += 3),
+//     };
+//   }
+//   return product;
+// });
+
+// console.log(droidToUpdate);
+
+
+const numbers = [2, 4, 6, 8, 10, 13, 14, 15];
+
+const filteredNumbers = numbers.filter((number) => number > 10);
+
+console.log(filteredNumbers);

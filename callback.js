@@ -12,10 +12,9 @@
 
 // const button = document.querySelector("button");
 
-// function fn() {
-//   console.log("clicked");
-// }
-// console.log(setTimeout(fn, 3000));
+// const fn =() => console.log("clicked");
+
+
 // button.addEventListener("click", fn);
 
 
@@ -59,21 +58,38 @@
 // console.log(filter(isAlbum, biggerNum));
 
 
-const makeDish = function (name, dish) {
-  console.log(`${name} готовит ${dish}`);
-}
+// const makeShef = function (name) {
+//   const makeDish = function (dish) {
+//    console.log(`${name} готовит ${dish}`);
+//   }
+//   return makeDish;
+// }
+
+// const Max = makeShef('Max');
+// Max('potato')
+// console.dir(Max);
+
+// const Ann = makeShef("Ann");
+// Ann('meat')
 
 
 
-makeDish('Max', 'borsch')
-makeDish("Ann", "meat");
-makeDish("Jara", "cherry");
-makeDish("Thorin", "chiken");
+// const objA = {
+//   x: 5,
+//   showX() {
+//     console.log(this.x);
 
+//     const objB = {
+//       y: 10,
+//       showThis() {
+//         console.log('this objB', this);
+//       }
+//     }
+//  objB.showThis();
+//   }
+// };
 
-
-
-
+// objA.showX();
 
 
 
