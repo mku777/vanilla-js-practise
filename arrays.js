@@ -174,9 +174,47 @@
 
 // console.log(droidToUpdate);
 
+// const numbers = [2, 4, 6, 8, 10, 13, 14, 15];
 
-const numbers = [2, 4, 6, 8, 10, 13, 14, 15];
+// const filteredNumbers = numbers.filter((number) => number > 10);
 
-const filteredNumbers = numbers.filter((number) => number > 10);
+// console.log(filteredNumbers);
 
-console.log(filteredNumbers);
+
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4, isOn: true },
+//   { name: "Scanner", price: 2700, quantity: 3, isOn: false },
+//   { name: "Droid", price: 400, quantity: 7, isOn: true },
+//   { name: "Grip", price: 1200, quantity: 9, isOn: false },
+// ];
+
+// const priceCheck = products.every(product => {
+//     return product.price > 50;
+// })
+
+// console.log(priceCheck);
+
+
+// const numbers = [2, 4, 6, 8, 10, 13, 14, 15];
+
+// const total = numbers.reduce((acc, number) => {
+//     console.log('acc ==>', acc)
+//     console.log('number ==>', number);
+//     return acc + number;
+// }, 0)
+
+// console.log('total ==>', total)
+
+
+const salary = {
+    max: 100,
+    ann: 150,
+    thorin: 300,
+}
+
+const total = Object.values(salary).reduce((acc, number) => {
+return acc + number
+}, 0)
+
+console.log('total ==>', total)
