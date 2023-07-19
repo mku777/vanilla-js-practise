@@ -207,14 +207,316 @@
 // console.log('total ==>', total)
 
 
-const salary = {
-    max: 100,
-    ann: 150,
-    thorin: 300,
-}
+// const salary = {
+//     max: 100,
+//     ann: 150,
+//     thorin: 300,
+// }
 
-const total = Object.values(salary).reduce((acc, number) => {
-return acc + number
-}, 0)
+// const total = Object.values(salary).reduce((acc, number) => {
+// return acc + number
+// }, 0)
 
-console.log('total ==>', total)
+// console.log('total ==>', total)
+
+
+// const products = [
+//   {
+//     name: "Radar",
+//     price: 1300,
+//     quantity: 4,
+//     isOn: true,
+//     tags: ["earth, moon, mars, neprune"],
+//   },
+//   {
+//     name: "Scanner",
+//     price: 2700,
+//     quantity: 3,
+//     isOn: false,
+//     tags: ["earth, moon, mars, venera"],
+//   },
+//   {
+//     name: "Droid",
+//     price: 400,
+//     quantity: 7,
+//     isOn: true,
+//     tags: ["moon, mars, neptune"],
+//   },
+//   {
+//     name: "Grip",
+//     price: 1200,
+//     quantity: 9,
+//     isOn: false,
+//     tags: ["earth, moon, mars, saturn"],
+//   },
+// ];
+
+// const tags = products.reduce((tag, product) => {
+//     tag.push(...product.tags);
+//     return tag;
+// }, [])
+
+// console.log(tags);
+
+
+// const numbers = [2, 30, 6, 8, 1, 13, 14, 4];
+// // numbers.sort();
+// console.log(numbers);
+
+// // const letters = ['a', 'b', 'c', 'd', 'D', 'f', 'b', 'k', 'A', 'j', 'K'];
+// // letters.sort();
+// // console.log(letters);
+
+// const sortArr = [...numbers].sort((currentEl, nextEl) => {
+//     return currentEl - nextEl;
+// });
+
+
+// const sortedArr = [...products].sort((currentEl, nextEl) => {
+//     const result = nextEl.name[0] < currentEl.name[0];
+//     if (result) {
+//         return 1;
+//     }
+//     if (!result) {
+//         return -1;
+//     }
+// })
+
+// console.log(sortedArr);
+
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
+
+
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter((genre, index, array) => {
+//     return array.indexOf(genre) === index;
+// })
+    
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+
+// const topRatedBooks = books.filter(book => {
+//     return MIN_RATING <= book.rating;
+// });
+
+// console.log(topRatedBooks);
+
+// const booksByAuthor = books.filter(book => {
+//     return AUTHOR === book.author;
+// })
+
+// console.log(booksByAuthor);
+
+
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+    }
+  
+  
+]
+
+// const getTotalFriendCount = (users) => {
+//     return users.reduce((acc, user) => acc + user.friends.length, 0);
+// };
+
+// console.log(getTotalFriendCount(users));
+
+// const calculateTotalBalance = (users) => {
+//     return users.reduce((acc, user) => acc + user.balance, 0);
+// };
+
+// console.log(calculateTotalBalance(users));
+
+// const getUsersWithFriend = (users, friendName) => {
+// return users.filter(user => user.friends.includes(friendName))
+// }
+// console.log(getUsersWithFriend(users, "Briana Decker"));
+
+
+// const getFriends = (users) => {
+//     const allFriends = users.flatMap(user => user.friends);
+//    return allFriends.filter((friend, index, array) => {
+//         return array.indexOf(friend) === index;
+//     })
+// };
+
+// console.log(getFriends(users));
+
+
+// const getActiveUsers = (users) => {
+//     return users.filter((users) => users.isActive);
+// };
+// console.log(getActiveUsers(users));
+
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players);
+
+// const totalPlayTime = playtimes.reduce((acc, player) => {
+//     return acc + player;
+// }, 0)
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// console.log(averagePlayTime);
+
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((sum, player) => {
+//     const average = player.playtime / player.gamesPlayed;
+//     console.log(average);
+//     return sum + average;
+// }, 0)
+
+// console.log(totalAveragePlaytimePerGame);
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+
+
+const sortedByAuthorName = books;
+
+const sortedByReversedAuthorName = books;
+
+const sortedByAscendingRating = books;
+
+const sortedByDescentingRating = books;
+
+
+console.log(sortedByAuthorName)
+console.log(sortedByReversedAuthorName);
+console.log(sortedByAscendingRating);
+console.log(sortedByDescentingRating);
