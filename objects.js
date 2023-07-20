@@ -402,3 +402,16 @@
 
 // console.log(atTheOldToad.getPotions());
 
+
+// const showMessage = function() {
+//     console.log('this', this)
+//     console.log('this', this.message)
+// }
+
+// const user = {
+//   message: "Invisibility",
+// };
+
+// user.showUserMessage = showMessage;
+
+// user.showUserMessage();
