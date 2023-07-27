@@ -152,33 +152,46 @@
 
 
 class Character {
-  static pass = '123456';
-  constructor(config) {
-    const { priority, race, clas, name, gender, itemLevel } = config;
+  constructor({ priority, race, name, gender } = {}) {
     this.priority = priority;
-      this.race = race;
-      this.clas = clas;
-      this.name = name;
-      this.gender = gender;
-      this.itemLevel = itemLevel;
+    this.race = race;
+    this.name = name;
+    this.gender = gender;
   }
-  changeItemLevel (newItemLevel) {
-    this.itemLevel = newItemLevel;
-};
 }
 
-const myCharacter = new Character({
-  priority: "main",
-  race: "Orc",
-  clas: "Hunter",
-  name: "Vindsval",
-  gender: "male",
-  itemLevel: 241,
-});
+class Hunter extends Character {
+  constructor({ arrowsCount, ...restProps }) {
+    super(restProps);
 
-myCharacter.changeItemLevel(300);
+    this._arrowsCount = arrowsCount;
+  }
+  set arrowsCount(count) {
+    this._arrowsCount = count;
+  }
+}
 
-console.log(myCharacter);
+const vindsval = new Hunter({priority : "main", race : "orc", name : "Vindsval", gender : "male", arrowsCount : 2000});
+vindsval.arrowsCount = 3500;
+
+console.log(vindsval);
+
+class Mage extends Character {
+  constructor({spells, ...restProps }) {
+    super(restProps);
+    this.spells = spells;
+  }
+  set spell(spell) {
+    this.spell = spells;
+  }
+}
+
+const darkspace = new Mage({ priority: "twink", race: "undead", name: "Darkspace", gender: "male", spells : 'fireball'})
+console.log(darkspace);
+
+
+
+
 
 
 
