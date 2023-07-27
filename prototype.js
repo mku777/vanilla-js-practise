@@ -27,6 +27,82 @@
 // });
 
 
+// const Box = function( {width, height, color} ) {
+//     this.width = width;
+//     this.height = height;
+//     this.color = color;
+// }
+// Box.prototype.colorChange = function (newColor) {
+//     this.color = newColor;
+// }
+
+// const myBox = new Box({
+//     width: 200,
+//     height: 100,
+//     color: "black",
+// })
+
+// myBox.colorChange('white')
+
+// console.log(myBox);
+
+
+
+// const CounterPlugin = function ({
+//   rootSelector,
+//   initialValue = 0,
+//   step = 1,
+// } = {}) {
+//   this._value = initialValue;
+//   this._step = step;
+//   this._refs = this._getRefs(rootSelector);
+//     this._bindEvents();
+
+//     console.log(this._refs);
+// };
+
+// CounterPlugin.prototype._getRefs = function (rootSelector) {
+//   const refs = {};
+//   refs.container = document.querySelector(rootSelector);
+//   refs.incrementButton = refs.container.querySelector("[data-increment]");
+//   refs.decrementButton = refs.container.querySelector("[data-decrement]");
+//   refs.value = refs.container.querySelector("[data-value]");
+//   return refs;
+// };
+
+// CounterPlugin.prototype._bindEvents = function () {
+//   this._refs.incrementButton.addEventListener("click", () => {
+//       this.increment();
+//       this.updateValue();
+//     // this._refs.value.textContent = this._value;
+//   });
+
+//   this._refs.decrementButton.addEventListener("click", () => {
+//     console.log();
+//       this.decrement();
+//       this.updateValue();
+//     // this._refs.value.textContent = this._value;;
+//   });
+// };
+
+// CounterPlugin.prototype.updateValue = function () {
+//    this._refs.value.textContent = this._value;
+// };
+
+
+// CounterPlugin.prototype.increment = function () {
+//   this._value += this._step;
+// };
+
+// CounterPlugin.prototype.decrement = function () {
+//   this._value -= this._step;
+// };
+
+// const counterFirst = new CounterPlugin({
+//   rootSelector: "#counter1",
+//   step: 10,
+// });
+
 
 // const Character = function (config) {
 //   const { priority, race, clas, name, gender, itemLevel } = config;
@@ -75,80 +151,37 @@
 // console.log(myCharacter2);
 
 
-// const Box = function( {width, height, color} ) {
-//     this.width = width;
-//     this.height = height;
-//     this.color = color;
-// }
-// Box.prototype.colorChange = function (newColor) {
-//     this.color = newColor;
-// }
-
-// const myBox = new Box({
-//     width: 200,
-//     height: 100,
-//     color: "black",
-// })
-
-// myBox.colorChange('white')
-
-// console.log(myBox);
-
-
-
-const CounterPlugin = function ({
-  rootSelector,
-  initialValue = 0,
-  step = 1,
-} = {}) {
-  this._value = initialValue;
-  this._step = step;
-  this._refs = this._getRefs(rootSelector);
-    this._bindEvents();
-
-    console.log(this._refs);
+class Character {
+  static pass = '123456';
+  constructor(config) {
+    const { priority, race, clas, name, gender, itemLevel } = config;
+    this.priority = priority;
+      this.race = race;
+      this.clas = clas;
+      this.name = name;
+      this.gender = gender;
+      this.itemLevel = itemLevel;
+  }
+  changeItemLevel (newItemLevel) {
+    this.itemLevel = newItemLevel;
 };
+}
 
-CounterPlugin.prototype._getRefs = function (rootSelector) {
-  const refs = {};
-  refs.container = document.querySelector(rootSelector);
-  refs.incrementButton = refs.container.querySelector("[data-increment]");
-  refs.decrementButton = refs.container.querySelector("[data-decrement]");
-  refs.value = refs.container.querySelector("[data-value]");
-  return refs;
-};
-
-CounterPlugin.prototype._bindEvents = function () {
-  this._refs.incrementButton.addEventListener("click", () => {
-      this.increment();
-      this.updateValue();
-    // this._refs.value.textContent = this._value;
-  });
-
-  this._refs.decrementButton.addEventListener("click", () => {
-    console.log();
-      this.decrement();
-      this.updateValue();
-    // this._refs.value.textContent = this._value;;
-  });
-};
-
-CounterPlugin.prototype.updateValue = function () {
-   this._refs.value.textContent = this._value;
-};
-
-
-CounterPlugin.prototype.increment = function () {
-  this._value += this._step;
-};
-
-CounterPlugin.prototype.decrement = function () {
-  this._value -= this._step;
-};
-
-const counterFirst = new CounterPlugin({
-  rootSelector: "#counter1",
-  step: 10,
+const myCharacter = new Character({
+  priority: "main",
+  race: "Orc",
+  clas: "Hunter",
+  name: "Vindsval",
+  gender: "male",
+  itemLevel: 241,
 });
+
+myCharacter.changeItemLevel(300);
+
+console.log(myCharacter);
+
+
+
+
 
 
