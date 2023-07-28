@@ -151,47 +151,97 @@
 // console.log(myCharacter2);
 
 
-class Character {
-  constructor({ priority, race, name, gender } = {}) {
-    this.priority = priority;
-    this.race = race;
-    this.name = name;
-    this.gender = gender;
-  }
-}
+// class Character {
+//   constructor({ priority, race, name, gender } = {}) {
+//     this.priority = priority;
+//     this.race = race;
+//     this.name = name;
+//     this.gender = gender;
+//   }
+// }
 
-class Hunter extends Character {
-  constructor({ arrowsCount, ...restProps }) {
-    super(restProps);
+// class Hunter extends Character {
+//   constructor({ arrowsCount, ...restProps }) {
+//     super(restProps);
 
-    this._arrowsCount = arrowsCount;
-  }
-  set arrowsCount(count) {
-    this._arrowsCount = count;
-  }
-}
+//     this._arrowsCount = arrowsCount;
+//   }
+//   set arrowsCount(count) {
+//     this._arrowsCount = count;
+//   }
+// }
 
-const vindsval = new Hunter({priority : "main", race : "orc", name : "Vindsval", gender : "male", arrowsCount : 2000});
-vindsval.arrowsCount = 3500;
+// const vindsval = new Hunter({priority : "main", race : "orc", name : "Vindsval", gender : "male", arrowsCount : 2000});
+// vindsval.arrowsCount = 3500;
 
-console.log(vindsval);
+// console.log(vindsval);
 
-class Mage extends Character {
-  constructor({spells, ...restProps }) {
-    super(restProps);
-    this.spells = spells;
-  }
-  set spell(spell) {
-    this.spell = spells;
-  }
-}
+// class Mage extends Character {
+//   constructor({spells, ...restProps }) {
+//     super(restProps);
+//     this.spells = spells;
+//   }
+//   set spell(spell) {
+//     this.spell = spells;
+//   }
+// }
 
-const darkspace = new Mage({ priority: "twink", race: "undead", name: "Darkspace", gender: "male", spells : 'fireball'})
-console.log(darkspace);
+// const darkspace = new Mage({ priority: "twink", race: "undead", name: "Darkspace", gender: "male", spells : 'fireball'})
+// console.log(darkspace);
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(newItem) {
+//     this.items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     const toDelete = this.items.indexOf(itemToRemove);
+//     this.items.splice(toDelete, 1);
+//   }
+// }
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+
+// storage.removeItem("Prolonger");
+
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
+// class StringBuilder {
+//   constructor(initialValue) {
+//       this.value = initialValue;
+//   }
+//   getValue() {
+//     return this.value;
+//   }
+//   padEnd(str) {
+//     this.value = `${this.value} + ${str}`;
+//   }
+//   padStart (str) {
+//     this.value = str + this.value;
+//   }
+//   padBoth(str) {
+//     this.value = str + this.value + str;
+//   }
+// }
 
-
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
 
 
 
