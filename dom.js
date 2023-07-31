@@ -109,4 +109,15 @@ const playlist = {
   genre: "rave",
 };
 
-const artistEl = document.createElement("div");
+const artistEl = document.querySelector(".artistEl");
+const albumEl = document.createElement("p");
+const tracksEl = document.createElement("p");
+const countEl = document.createElement("p");
+
+albumEl.textContent = playlist.album;
+tracksEl.textContent = playlist.tracks;
+countEl.textContent = playlist.trackCount;
+
+artistEl.append(albumEl, tracksEl, countEl);
+
+console.log(artistEl);
