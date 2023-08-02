@@ -223,30 +223,69 @@
 //  textEl.style.fontSize = `${e.currentTarget.value}px`;
 // });
 
-// Обработка отправки формы form.login-form должна быть по событию submit.
-// При отправке формы страница не должна перезагружаться.
-// Если в форме есть незаполненные поля, выводи alert с предупреждением о том, что все поля должны быть заполнены.
-// Если пользователь заполнил все поля и отправил форму, собери значения полей в обьект, где имя поля будет именем
-// свойства, а значение поля - значением свойства. Для доступа к элементам формы используй свойство elements.
-// Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
+// const loginFormRef = document.querySelector(".login-form");
+
+// loginFormRef.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const email = e.currentTarget.email.value;
+//   const password = e.currentTarget.password.value;
+//   if (email && password) {
+//     const userObject = {
+//       email,
+//       password,
+//     };
+// document.querySelector(".login-form").reset();
+//     return console.log(userObject);
+//   }
+//   window.alert("Please fill all fields");
+//     document.querySelector(".login-form").reset();
+// });
 
 
-const loginFormRef = document.querySelector(".login-form");
+// const changeColorButton = document.querySelector(".change-color");
+// const backgroundColor = document.querySelector(".color");
+// const bodyColor = document.querySelector("body");
 
-loginFormRef.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = e.currentTarget.email.value;
-  const password = e.currentTarget.password.value;
-  if (email && password) {
-    const userObject = {
-      email,
-      password,
-    };
-document.querySelector(".login-form").reset();
-    return console.log(userObject);
-  }
-  window.alert("Please fill all fields");
-    document.querySelector(".login-form").reset();
+
+// changeColorButton.addEventListener("click", () => {
+//   bodyColor.style.backgroundColor = getRandomHexColor();
+//   backgroundColor.textContent = bodyColor.style.backgroundColor;
+// });
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+
+
+const inputEl = document.querySelector("input");
+const createButton = document.querySelector("[data-create]");
+const destroyButton = document.querySelector("[data-destroy]");
+const boxesEl = document.querySelector("#boxes");
+
+
+createButton.addEventListener("click", (e) => {
+  inputEl.value;
+  createBoxes(inputEl.value);
+    inputEl.value = "";
 });
 
+destroyButton.addEventListener("click", (e) => {
+boxesEl.innerHTML = "";
+})
+
+function createBoxes(amount) {
+  boxesEl.innerHTML = "";
+  let basicSize = 30;
+  for (let i = 0; i < amount; i += 1) {
+    const box = document.createElement("div");
+    let size = basicSize + i * 10;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxesEl.append(box);
+  }
+}
 
