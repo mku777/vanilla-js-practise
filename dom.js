@@ -189,12 +189,64 @@
 // });
 
 
-const inputEl = document.querySelector("#name-input");
-const spanEl = document.querySelector("#name-output");
+// const inputEl = document.querySelector("#name-input");
+// const spanEl = document.querySelector("#name-output");
 
-inputEl.addEventListener("input", (e) => {
-  spanEl.textContent = e.currentTarget.value;
-  if (e.currentTarget.value === "") {
-    spanEl.textContent = 'Anonymous';
+// inputEl.addEventListener("input", (e) => {
+//   spanEl.textContent = e.currentTarget.value;
+//   if (e.currentTarget.value === "") {
+//     spanEl.textContent = 'Anonymous';
+//   }
+// })
+
+
+
+// const inputEl = document.querySelector("#validation-input");
+
+// let dataEl = inputEl.dataset.length;
+// console.log(dataEl);
+
+// inputEl.addEventListener("blur", () => {
+//   if (inputEl.value.length !== Number(dataEl)) {
+//     return inputEl.classList.add("invalid");
+//   }
+//   inputEl.classList.remove("invalid");
+//   return inputEl.classList.add("valid");
+// });
+
+// console.log(inputEl);
+
+// const inputEl = document.querySelector("#font-size-control");
+// const textEl = document.querySelector("#text");
+
+// inputEl.addEventListener("input", (e) => {
+//  textEl.style.fontSize = `${e.currentTarget.value}px`;
+// });
+
+// Обработка отправки формы form.login-form должна быть по событию submit.
+// При отправке формы страница не должна перезагружаться.
+// Если в форме есть незаполненные поля, выводи alert с предупреждением о том, что все поля должны быть заполнены.
+// Если пользователь заполнил все поля и отправил форму, собери значения полей в обьект, где имя поля будет именем
+// свойства, а значение поля - значением свойства. Для доступа к элементам формы используй свойство elements.
+// Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
+
+
+const loginFormRef = document.querySelector(".login-form");
+
+loginFormRef.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = e.currentTarget.email.value;
+  const password = e.currentTarget.password.value;
+  if (email && password) {
+    const userObject = {
+      email,
+      password,
+    };
+document.querySelector(".login-form").reset();
+    return console.log(userObject);
   }
-})
+  window.alert("Please fill all fields");
+    document.querySelector(".login-form").reset();
+});
+
+
