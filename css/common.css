@@ -19,5 +19,26 @@
 }
 
 #validation-input.invalid {
-    border-color: #f44336;
+    border-color: grey;
+}
+
+
+#parent, #child, #inner-child {
+margin: 16px;
+padding: 16px;
+border: 1px solid white;
+
+}
+
+#parent {
+    background-color: pink;
+}
+
+#child {
+    background-color: green;
+
+}
+
+#inner-child {
+    background-color: blue;
 }
