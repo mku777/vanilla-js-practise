@@ -42,3 +42,34 @@ border: 1px solid white;
 #inner-child {
     background-color: blue;
 }
+.tags {
+    outline: 1px solid black;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tags-btn {
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+
+}
+
+.tags-btn--active {
+    color: white;
+    background-color: grey;
+}
+
+.color-swatch {
+    width: 100px;
+    height: 100px;
+}
+
+.palette {
+margin: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
