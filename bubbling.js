@@ -54,48 +54,85 @@
 // tagsEl.addEventListener("click", onTagsClick);
 
 
-const colors = [
-  { hex: "#ff4000", rgb: "255, 64, 0" },
-  { hex: "#ff8000", rgb: "255, 128, 0" },
-  { hex: "#ffbf00", rgb: "255, 128, 0" },
-  { hex: "#ffbf00", rgb: "255, 191, 0" },
-  { hex: "#ffff00", rgb: "255, 255, 0" },
-  { hex: "#bfff00", rgb: "191, 255, 0" },
-  { hex: "#80ff00", rgb: "128, 255, 0" },
-  { hex: "#40ff00", rgb: "64, 255, 0" },
-];
+// const colors = [
+//   { hex: "#ff4000", rgb: "255, 64, 0" },
+//   { hex: "#ff8000", rgb: "255, 128, 0" },
+//   { hex: "#ffbf00", rgb: "255, 128, 0" },
+//   { hex: "#ffbf00", rgb: "255, 191, 0" },
+//   { hex: "#ffff00", rgb: "255, 255, 0" },
+//   { hex: "#bfff00", rgb: "191, 255, 0" },
+//   { hex: "#80ff00", rgb: "128, 255, 0" },
+//   { hex: "#40ff00", rgb: "64, 255, 0" },
+// ];
 
-const palette = document.querySelector(".palette");
-const markUp = markupCreate(colors);
+// const palette = document.querySelector(".palette");
+// const markUp = markupCreate(colors);
 
-palette.insertAdjacentHTML("afterbegin", markUp);
+// palette.insertAdjacentHTML("afterbegin", markUp);
 
-function markupCreate(colors) {
-  return colors
-    .map((color) => {
-      return `
-  <div class="color-card">
-    <div
-      class="color-swatch"
-      data-hex= "${color.hex}"
-      data-rgb= "${color.rgb}"
-      style="background-color: ${color.hex}"
-    ></div>
-    <div class="color-meta">
-      <p><b>HEX</b> : ${color.hex}</p>
-      <p><b>RGB</b> : ${color.rgb}</p>
-    </div>
-  </div>
+// function markupCreate(colors) {
+//   return colors
+//     .map((color) => {
+//       return `
+//   <div class="color-card">
+//     <div
+//       class="color-swatch"
+//       data-hex= "${color.hex}"
+//       data-rgb= "${color.rgb}"
+//       style="background-color: ${color.hex}"
+//     ></div>
+//     <div class="color-meta">
+//       <p><b>HEX</b> : ${color.hex}</p>
+//       <p><b>RGB</b> : ${color.rgb}</p>
+//     </div>
+//   </div>
 
-`;
-    })
-    .join("");
+// `;
+//     })
+//     .join("");
+// }
+
+// palette.addEventListener('click', colorPicker)
+
+// function colorPicker(e) {
+//   if (!e.target.classList.contains("color-swatch")) {
+//     return;
+//   }
+//    console.log("colorPicker");
+// }
+
+
+const cordsElement = document.querySelector(".js-coords");
+console.log(cordsElement);
+const throttledOn = _.throttle(onMouseMove, 200);
+
+let mouseMove = 0;
+
+window.addEventListener("mousemove", throttledOn);
+
+function onMouseMove(e) {
+  mouseMove += 1;
+
+  console.log(e);
+
+  cordsElement.textContent = `
+  Кол-во вызовов ${mouseMove}, X: ${e.clientX},
+  Y : ${e.clientY}`;
 }
 
-palette.addEventListener('click', colorPicker)
 
-function colorPicker(e) {
-  if (e.target.classList.contains("color-swatch")) {
-   console.log("colorPicker");
- }
+
+const inputEl = document.querySelector('js-input')
+const outputEl = document.querySelector('js-output')
+let inputCounter = 0;
+
+inputEl.addEventListener('input', onInputChange);
+
+function onInputChange(e) {
+  inputCounter += 1;
+
+  outputEl.textContent = `Кол-во вызовов: ${inputCounter};
+  значение: ${e.target.value}`;
+
 }
+
