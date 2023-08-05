@@ -73,3 +73,21 @@ margin: 10px 10px;
     display: flex;
     flex-wrap: wrap;
 }
+
+.list-lazy {
+    list-style: none;
+}
+
+.list-lazy img {
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 2000ms linear;
+    width: 860px;
+    height: 640;
+    object-fit: cover;
+}
+
+.list-lazy img.appear {
+    transform: translateX(0);
+    opacity: 1;
+}

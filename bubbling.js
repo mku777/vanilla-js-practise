@@ -102,37 +102,95 @@
 // }
 
 
-const cordsElement = document.querySelector(".js-coords");
-console.log(cordsElement);
-const throttledOn = _.throttle(onMouseMove, 200);
+// const cordsElement = document.querySelector(".js-coords");
+// console.log(cordsElement);
+// const throttledOn = _.throttle(onMouseMove, 200);
 
-let mouseMove = 0;
+// let mouseMove = 0;
 
-window.addEventListener("mousemove", throttledOn);
+// window.addEventListener("mousemove", throttledOn);
 
-function onMouseMove(e) {
-  mouseMove += 1;
+// function onMouseMove(e) {
+//   mouseMove += 1;
 
-  console.log(e);
+//   console.log(e);
 
-  cordsElement.textContent = `
-  Кол-во вызовов ${mouseMove}, X: ${e.clientX},
-  Y : ${e.clientY}`;
-}
+//   cordsElement.textContent = `
+//   Кол-во вызовов ${mouseMove}, X: ${e.clientX},
+//   Y : ${e.clientY}`;
+// }
 
 
 
-const inputEl = document.querySelector('js-input')
-const outputEl = document.querySelector('js-output')
-let inputCounter = 0;
+// const inputEl = document.querySelector('.js-input')
+// const outputEl = document.querySelector('.js-output')
+// let inputCounter = 0;
 
-inputEl.addEventListener('input', onInputChange);
+// inputEl.addEventListener('input', _.debounce(onInputChange, 500));
 
-function onInputChange(e) {
-  inputCounter += 1;
+// function onInputChange(e) {
+//   inputCounter += 1;
 
-  outputEl.textContent = `Кол-во вызовов: ${inputCounter};
-  значение: ${e.target.value}`;
+//   console.log(e);
 
-}
+//   outputEl.textContent = `Кол-во вызовов: ${inputCounter};
+//   значение: ${e.target.value}`;
 
+// }
+
+// const bands = [
+//   { label: 'Emperor' },
+//   { label: 'Funeral Mist' },
+//   { label: 'Marduk' },
+//   { label: 'Gorgoroth' },
+//   { label: 'Dark Funeral' },
+//   { label: 'Mayhem' },
+//   { label: 'Nile' },
+//   { label: 'Napalm Death' },
+//   { label: 'Wormed' },
+//   { label: 'Ulcerate' },
+//   { label: 'Ved Buens Ende' },
+//   { label: 'Dodheimsgard' },
+//   { label: 'Immortal' },
+//   { label: 'Isahn' },
+//   { label: 'Leprous' },
+//   { label: 'Shining' },
+//   { label: 'Code' },
+//   { label: 'Lifelover' },
+//   { label: 'Abyssic Hate' },
+//   { label: 'Gojira' },
+// ];
+
+// const listEl = document.querySelector('.js-list');
+// const filterEL = document.querySelector('#filter');
+// const markList = markUp(bands);
+// listEl.innerHTML = markList;
+
+// filterEL.addEventListener("input", _.debounce(onFilter, 500));
+
+
+
+// function onFilter(e) {
+//   const filter = e.target.value.toLowerCase();
+//   const filteredItems = bands.filter(band => band.label.toLowerCase().includes(filter));
+//   const filteredMarkUp = markUp(filteredItems);
+//   listEl.innerHTML = filteredMarkUp;
+
+// }
+
+// function markUp(items) {
+//   return items.map(item => `<li>${item.label}</li>`).join("");
+// }
+
+
+
+const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+
+lazyImages.forEach(image => {
+  image.addEventListener('load', onImageLoaded, {once: true} )
+})
+
+function onImageLoaded(evt) {
+  evt.target.classList.add('appear')
+} 
