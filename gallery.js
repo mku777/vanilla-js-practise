@@ -1,5 +1,3 @@
-// import * as basicLightbox from "basiclightbox";
-
 export const galleryItems = [
   {
     preview:
