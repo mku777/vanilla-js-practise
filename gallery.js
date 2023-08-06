@@ -71,28 +71,28 @@ const myMarkUp = createGalleryMarkup(galleryItems);
 
 galleryEl.innerHTML = myMarkUp;
 
-galleryEl.addEventListener("click", onModalOpen);
+// galleryEl.addEventListener("click", onModalOpen);
 
-function onModalOpen(e) {
-  e.preventDefault();
-  if (event.target.classList.value !== "gallery__image") {
-    return;
-  }
+// function onModalOpen(e) {
+//   e.preventDefault();
+//   if (event.target.classList.value !== "gallery__image") {
+//     return;
+//   }
 
-  const instance = basicLightbox.create(
-    `
-		<img width="1400" height="900" src="${e.target.dataset.source}">
-	`
-  );
+//   const instance = basicLightbox.create(
+//     `
+// 		<img width="1400" height="900" src="${e.target.dataset.source}">
+// 	`
+//   );
 
-  instance.show();
+//   instance.show();
 
-  galleryEl.addEventListener("keydown", (e) => {
-    if (e.code === "Escape") {
-      instance.close();
-    }
-  });
-}
+//   galleryEl.addEventListener("keydown", (e) => {
+//     if (e.code === "Escape") {
+//       instance.close();
+//     }
+//   });
+// }
 
 function createGalleryMarkup(gallery) {
   return gallery
@@ -110,3 +110,12 @@ function createGalleryMarkup(gallery) {
     })
     .join("");
 }
+
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionPosition: "top",
+  captionDelay: 500,
+  spinner : true,
+});
+
+console.log(lightbox);
