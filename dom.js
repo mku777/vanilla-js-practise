@@ -1,3 +1,6 @@
+
+
+
 // addEventListener('click', (evt) => {
 //     const navRef = document.querySelector("ul");
 //     console.log(navRef);
@@ -252,7 +255,7 @@
 //   backgroundColor.textContent = bodyColor.style.backgroundColor;
 // });
 
-function getRandomHexColor() {
+export default function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
@@ -260,32 +263,32 @@ function getRandomHexColor() {
 
 
 
-const inputEl = document.querySelector("input");
-const createButton = document.querySelector("[data-create]");
-const destroyButton = document.querySelector("[data-destroy]");
-const boxesEl = document.querySelector("#boxes");
+// const inputEl = document.querySelector("input");
+// const createButton = document.querySelector("[data-create]");
+// const destroyButton = document.querySelector("[data-destroy]");
+// const boxesEl = document.querySelector("#boxes");
 
 
-createButton.addEventListener("click", (e) => {
-  inputEl.value;
-  createBoxes(inputEl.value);
-    inputEl.value = "";
-});
+// createButton.addEventListener("click", (e) => {
+//   inputEl.value;
+//   createBoxes(inputEl.value);
+//     inputEl.value = "";
+// });
 
-destroyButton.addEventListener("click", (e) => {
-boxesEl.innerHTML = "";
-})
+// destroyButton.addEventListener("click", (e) => {
+// boxesEl.innerHTML = "";
+// })
 
-function createBoxes(amount) {
-  boxesEl.innerHTML = "";
-  let basicSize = 30;
-  for (let i = 0; i < amount; i += 1) {
-    const box = document.createElement("div");
-    let size = basicSize + i * 10;
-    box.style.width = `${size}px`;
-    box.style.height = `${size}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesEl.append(box);
-  }
-}
 
+// function createBoxes(amount) {
+//   boxesEl.innerHTML = "";
+//   let basicSize = 30;
+//   for (let i = 0; i < amount; i += 1) {
+//     const box = document.createElement("div");
+//     let size = basicSize + i * 10;
+//     box.style.width = `${size}px`;
+//     box.style.height = `${size}px`;
+//     box.style.backgroundColor = getRandomHexColor();
+//     boxesEl.append(box);
+//   }
+// }

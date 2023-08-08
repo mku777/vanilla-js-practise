@@ -118,6 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"dom.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getRandomHexColor;
 // addEventListener('click', (evt) => {
 //     const navRef = document.querySelector("ul");
 //     console.log(navRef);
@@ -364,30 +370,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 function getRandomHexColor() {
   return "#".concat(Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0));
 }
-var inputEl = document.querySelector("input");
-var createButton = document.querySelector("[data-create]");
-var destroyButton = document.querySelector("[data-destroy]");
-var boxesEl = document.querySelector("#boxes");
-createButton.addEventListener("click", function (e) {
-  inputEl.value;
-  createBoxes(inputEl.value);
-  inputEl.value = "";
-});
-destroyButton.addEventListener("click", function (e) {
-  boxesEl.innerHTML = "";
-});
-function createBoxes(amount) {
-  boxesEl.innerHTML = "";
-  var basicSize = 30;
-  for (var i = 0; i < amount; i += 1) {
-    var box = document.createElement("div");
-    var size = basicSize + i * 10;
-    box.style.width = "".concat(size, "px");
-    box.style.height = "".concat(size, "px");
-    box.style.backgroundColor = getRandomHexColor();
-    boxesEl.append(box);
-  }
-}
+
+// const inputEl = document.querySelector("input");
+// const createButton = document.querySelector("[data-create]");
+// const destroyButton = document.querySelector("[data-destroy]");
+// const boxesEl = document.querySelector("#boxes");
+
+// createButton.addEventListener("click", (e) => {
+//   inputEl.value;
+//   createBoxes(inputEl.value);
+//     inputEl.value = "";
+// });
+
+// destroyButton.addEventListener("click", (e) => {
+// boxesEl.innerHTML = "";
+// })
+
+// function createBoxes(amount) {
+//   boxesEl.innerHTML = "";
+//   let basicSize = 30;
+//   for (let i = 0; i < amount; i += 1) {
+//     const box = document.createElement("div");
+//     let size = basicSize + i * 10;
+//     box.style.width = `${size}px`;
+//     box.style.height = `${size}px`;
+//     box.style.backgroundColor = getRandomHexColor();
+//     boxesEl.append(box);
+//   }
+// }
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -413,7 +423,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58140" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58634" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

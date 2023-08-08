@@ -1,3 +1,5 @@
+export default 555;
+
 // const lenght = family.length - 1;
 // console.log(family[3]);
 

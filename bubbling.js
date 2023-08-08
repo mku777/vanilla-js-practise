@@ -1,3 +1,6 @@
+import def from './entities/arrays'
+console.log(def);
+
 // const refs = {
 //   parrent: document.querySelector("#parent"),
 //   child: document.querySelector("#child"),
@@ -31,7 +34,6 @@
 //   console.log(e.target.textContent);
 //  });
 
-
 // const tagsEl = document.querySelector(".js-tags");
 // let selectedTag = null;
 
@@ -39,9 +41,9 @@
 //   if (e.target.nodeName !== "BUTTON") {
 //     return;
 //   }
-  
+
 //   const currentActiveButton = document.querySelector(".tags-btn--active");
-  
+
 //   if (currentActiveButton) {
 //     currentActiveButton.classList.remove("tags-btn--active");
 //   }
@@ -52,7 +54,6 @@
 // }
 
 // tagsEl.addEventListener("click", onTagsClick);
-
 
 // const colors = [
 //   { hex: "#ff4000", rgb: "255, 64, 0" },
@@ -101,7 +102,6 @@
 //    console.log("colorPicker");
 // }
 
-
 // const cordsElement = document.querySelector(".js-coords");
 // console.log(cordsElement);
 // const throttledOn = _.throttle(onMouseMove, 200);
@@ -119,8 +119,6 @@
 //   Кол-во вызовов ${mouseMove}, X: ${e.clientX},
 //   Y : ${e.clientY}`;
 // }
-
-
 
 // const inputEl = document.querySelector('.js-input')
 // const outputEl = document.querySelector('.js-output')
@@ -168,8 +166,6 @@
 
 // filterEL.addEventListener("input", _.debounce(onFilter, 500));
 
-
-
 // function onFilter(e) {
 //   const filter = e.target.value.toLowerCase();
 //   const filteredItems = bands.filter(band => band.label.toLowerCase().includes(filter));
@@ -182,15 +178,14 @@
 //   return items.map(item => `<li>${item.label}</li>`).join("");
 // }
 
-
-
 const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-
-lazyImages.forEach(image => {
-  image.addEventListener('load', onImageLoaded, {once: true} )
-})
+lazyImages.forEach((image) => {
+  image.addEventListener("load", onImageLoaded, { once: true });
+});
 
 function onImageLoaded(evt) {
-  evt.target.classList.add('appear')
-} 
+  evt.target.classList.add("appear");
+}
+
+
