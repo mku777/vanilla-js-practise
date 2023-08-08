@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm";
+
 export const galleryItems = [
   {
     preview:
@@ -113,7 +115,7 @@ const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "top",
   captionDelay: 500,
-  spinner : true,
+  spinner: true,
 });
 
 console.log(lightbox);
