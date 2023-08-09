@@ -122,4 +122,4 @@ const lightbox = new SimpleLightbox(".gallery a", {
   spinner: true,
 });
 
-console.log(lightbox);
+

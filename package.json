@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vimeo/player": "^2.20.1",
+    "lodash.throttle": "^4.1.1",
     "module-name": "^0.0.1-security",
-    "simplelightbox": "^2.14.1"
+    "simplelightbox": "^2.14.1",
+    "vimeo": "^2.3.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
