@@ -118,7 +118,42 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"async.js":[function(require,module,exports) {
-console.log('asyc');
+// const logMessage = (message) => {
+//     console.log('Лог при вызове через 3 секунды');
+// }
+
+// console.log('до вызова setTimeout');
+
+// setTimeout(() => {
+//     console.log('внутри колбека для setTimeout');
+// }, 3000)
+
+// console.log("после вызова setTimeout");
+
+// function logger(time) {
+//   console.log(`лог через ${time} ms, потому что не отменили таймер`);
+// }
+
+// const timerId = setTimeout(logger, 2000, 2000);
+
+// const shouldCancelTimer = Math.random() > 0.3;
+// console.log(shouldCancelTimer);
+
+// if (shouldCancelTimer) {
+//   clearTimeout(timerId);
+// }
+
+var logger = function logger(time) {
+  console.log("\u041B\u043E\u0433 \u043A\u0430\u0436\u0434\u044B\u0435 ".concat(time, " ms - ").concat(Date.now()));
+};
+console.log('до вызова setInterval');
+var timerId = setInterval(logger, 3000, 3000);
+console.log("после вызова setInterval");
+var shouldCancelTimer = Math.random() > 0.3;
+console.log(shouldCancelTimer);
+if (shouldCancelTimer) {
+  clearInterval(timerId);
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
