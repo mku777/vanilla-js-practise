@@ -1,4 +1,3 @@
-
 // const logMessage = (message) => {
 //     console.log('Лог при вызове через 3 секунды');
 // }
@@ -66,19 +65,24 @@
 
 // ---------- Subscriptions----
 
-const PROMT_DELAY = 2000;
-const MAX_PROMPT_ATTEMTS = 4;
+// const PROMT_DELAY = 2000;
+// const MAX_PROMPT_ATTEMTS = 4;
 
-let promtCounter = 0;
-let hasSubscribed = false;
+// let promtCounter = 0;
+// let hasSubscribed = false;
 
-const intervalId = setInterval(() => {
-  if (promtCounter === MAX_PROMPT_ATTEMTS) {
-    console.log("останавливаем интервал");
-    clearInterval(intervalId);
-    return;
-  }
-  console.log("подпишись на рассылку ->" + Date.now());
-  promtCounter += 1;
-}, PROMT_DELAY);
+// const intervalId = setInterval(() => {
+//   if (promtCounter === MAX_PROMPT_ATTEMTS) {
+//     console.log("останавливаем интервал");
+//     clearInterval(intervalId);
+//     return;
+//   }
+//   console.log("подпишись на рассылку ->" + Date.now());
+//   promtCounter += 1;
+// }, PROMT_DELAY);
 
+const myModal = new BSN.Modal("#exampleModal");
+
+console.log(myModal);
+
+myModal.show();

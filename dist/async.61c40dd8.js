@@ -185,19 +185,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 // ---------- Subscriptions----
 
-var PROMT_DELAY = 2000;
-var MAX_PROMPT_ATTEMTS = 4;
-var promtCounter = 0;
-var hasSubscribed = false;
-var intervalId = setInterval(function () {
-  if (promtCounter === MAX_PROMPT_ATTEMTS) {
-    console.log("останавливаем интервал");
-    clearInterval(intervalId);
-    return;
-  }
-  console.log("подпишись на рассылку ->" + Date.now());
-  promtCounter += 1;
-}, PROMT_DELAY);
+// const PROMT_DELAY = 2000;
+// const MAX_PROMPT_ATTEMTS = 4;
+
+// let promtCounter = 0;
+// let hasSubscribed = false;
+
+// const intervalId = setInterval(() => {
+//   if (promtCounter === MAX_PROMPT_ATTEMTS) {
+//     console.log("останавливаем интервал");
+//     clearInterval(intervalId);
+//     return;
+//   }
+//   console.log("подпишись на рассылку ->" + Date.now());
+//   promtCounter += 1;
+// }, PROMT_DELAY);
+
+var myModal = new BSN.Modal("#exampleModal");
+console.log(myModal);
+myModal.show();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -223,7 +229,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56381" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57089" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
