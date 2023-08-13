@@ -549,68 +549,57 @@ var _default = 555; // const lenght = family.length - 1;
 // console.log(sortedByReversedAuthorName);
 // console.log(sortedByAscendingRating);
 // console.log(sortedByDescentingRating);
+
 exports.default = _default;
 },{}],"bubbling.js":[function(require,module,exports) {
 "use strict";
 
 var _arrays = _interopRequireDefault(require("./entities/arrays"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-console.log(_arrays.default);
 
-// const refs = {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log(_arrays.default); // const refs = {
 //   parrent: document.querySelector("#parent"),
 //   child: document.querySelector("#child"),
 //   innerChild: document.querySelector("#inner-child"),
 // };
-
 // refs.parrent.addEventListener("click", (e) => {
 //   console.log("parrent clicked");
 //   console.log("e target ->", e.target);
 //   console.log("e currentTarget ->", e.currentTarget);
 // });
-
 // refs.child.addEventListener("click", (e) => {
 //   console.log("child clicked");
 //   console.log("e target ->", e.target);
 //   console.log("e currentTarget ->", e.currentTarget);
 // });
-
 // refs.innerChild.addEventListener("click", (e) => {
 //   console.log("inner child clicked");
 //   console.log("e target ->", e.target);
 //   console.log("e currentTarget ->", e.currentTarget);
 // });
-
 // const buttonsEL = document.querySelector('.js-container');
-
 // buttonsEL.addEventListener('click', (e) => {
 //   if (e.target.nodeName !== 'BUTTON') {
 //     return;
 //   }
 //   console.log(e.target.textContent);
 //  });
-
 // const tagsEl = document.querySelector(".js-tags");
 // let selectedTag = null;
-
 // function onTagsClick(e) {
 //   if (e.target.nodeName !== "BUTTON") {
 //     return;
 //   }
-
 //   const currentActiveButton = document.querySelector(".tags-btn--active");
-
 //   if (currentActiveButton) {
 //     currentActiveButton.classList.remove("tags-btn--active");
 //   }
-
 //   e.target.classList.add("tags-btn--active");
 //   selectedTag = e.target.dataset.value;
 //   console.log(selectedTag);
 // }
-
 // tagsEl.addEventListener("click", onTagsClick);
-
 // const colors = [
 //   { hex: "#ff4000", rgb: "255, 64, 0" },
 //   { hex: "#ff8000", rgb: "255, 128, 0" },
@@ -621,12 +610,9 @@ console.log(_arrays.default);
 //   { hex: "#80ff00", rgb: "128, 255, 0" },
 //   { hex: "#40ff00", rgb: "64, 255, 0" },
 // ];
-
 // const palette = document.querySelector(".palette");
 // const markUp = markupCreate(colors);
-
 // palette.insertAdjacentHTML("afterbegin", markUp);
-
 // function markupCreate(colors) {
 //   return colors
 //     .map((color) => {
@@ -643,55 +629,39 @@ console.log(_arrays.default);
 //       <p><b>RGB</b> : ${color.rgb}</p>
 //     </div>
 //   </div>
-
 // `;
 //     })
 //     .join("");
 // }
-
 // palette.addEventListener('click', colorPicker)
-
 // function colorPicker(e) {
 //   if (!e.target.classList.contains("color-swatch")) {
 //     return;
 //   }
 //    console.log("colorPicker");
 // }
-
 // const cordsElement = document.querySelector(".js-coords");
 // console.log(cordsElement);
 // const throttledOn = _.throttle(onMouseMove, 200);
-
 // let mouseMove = 0;
-
 // window.addEventListener("mousemove", throttledOn);
-
 // function onMouseMove(e) {
 //   mouseMove += 1;
-
 //   console.log(e);
-
 //   cordsElement.textContent = `
 //   Кол-во вызовов ${mouseMove}, X: ${e.clientX},
 //   Y : ${e.clientY}`;
 // }
-
 // const inputEl = document.querySelector('.js-input')
 // const outputEl = document.querySelector('.js-output')
 // let inputCounter = 0;
-
 // inputEl.addEventListener('input', _.debounce(onInputChange, 500));
-
 // function onInputChange(e) {
 //   inputCounter += 1;
-
 //   console.log(e);
-
 //   outputEl.textContent = `Кол-во вызовов: ${inputCounter};
 //   значение: ${e.target.value}`;
-
 // }
-
 // const bands = [
 //   { label: 'Emperor' },
 //   { label: 'Funeral Mist' },
@@ -714,22 +684,17 @@ console.log(_arrays.default);
 //   { label: 'Abyssic Hate' },
 //   { label: 'Gojira' },
 // ];
-
 // const listEl = document.querySelector('.js-list');
 // const filterEL = document.querySelector('#filter');
 // const markList = markUp(bands);
 // listEl.innerHTML = markList;
-
 // filterEL.addEventListener("input", _.debounce(onFilter, 500));
-
 // function onFilter(e) {
 //   const filter = e.target.value.toLowerCase();
 //   const filteredItems = bands.filter(band => band.label.toLowerCase().includes(filter));
 //   const filteredMarkUp = markUp(filteredItems);
 //   listEl.innerHTML = filteredMarkUp;
-
 // }
-
 // function markUp(items) {
 //   return items.map(item => `<li>${item.label}</li>`).join("");
 // }
@@ -740,6 +705,7 @@ lazyImages.forEach(function (image) {
     once: true
   });
 });
+
 function onImageLoaded(evt) {
   evt.target.classList.add("appear");
 }
@@ -747,6 +713,7 @@ function onImageLoaded(evt) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
+
 function Module(moduleName) {
   OldModule.call(this, moduleName);
   this.hot = {
@@ -762,32 +729,37 @@ function Module(moduleName) {
   };
   module.bundle.hotData = null;
 }
+
 module.bundle.Module = Module;
 var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
+
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52411" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62313" + '/');
+
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
     var data = JSON.parse(event.data);
+
     if (data.type === 'update') {
       var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
           var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
           if (didAccept) {
             handled = true;
           }
         }
-      });
+      }); // Enable HMR for CSS by default.
 
-      // Enable HMR for CSS by default.
       handled = handled || data.assets.every(function (asset) {
         return asset.type === 'css' && asset.generated.js;
       });
+
       if (handled) {
         console.clear();
         data.assets.forEach(function (asset) {
@@ -796,21 +768,24 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
+
     if (data.type === 'reload') {
       ws.close();
+
       ws.onclose = function () {
         location.reload();
       };
     }
+
     if (data.type === 'error-resolved') {
       console.log('[parcel] ✨ Error resolved');
       removeErrorOverlay();
     }
+
     if (data.type === 'error') {
       console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
       removeErrorOverlay();
@@ -819,17 +794,19 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     }
   };
 }
+
 function removeErrorOverlay() {
   var overlay = document.getElementById(OVERLAY_ID);
+
   if (overlay) {
     overlay.remove();
   }
 }
+
 function createErrorOverlay(data) {
   var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID;
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
 
-  // html encode message and stack trace
   var message = document.createElement('div');
   var stackTrace = document.createElement('pre');
   message.innerText = data.error.message;
@@ -837,31 +814,41 @@ function createErrorOverlay(data) {
   overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
   return overlay;
 }
+
 function getParents(bundle, id) {
   var modules = bundle.modules;
+
   if (!modules) {
     return [];
   }
+
   var parents = [];
   var k, d, dep;
+
   for (k in modules) {
     for (d in modules[k][1]) {
       dep = modules[k][1][d];
+
       if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
         parents.push(k);
       }
     }
   }
+
   if (bundle.parent) {
     parents = parents.concat(getParents(bundle.parent, id));
   }
+
   return parents;
 }
+
 function hmrApply(bundle, asset) {
   var modules = bundle.modules;
+
   if (!modules) {
     return;
   }
+
   if (modules[asset.id] || !bundle.parent) {
     var fn = new Function('require', 'module', 'exports', asset.generated.js);
     asset.isNew = !modules[asset.id];
@@ -870,45 +857,58 @@ function hmrApply(bundle, asset) {
     hmrApply(bundle.parent, asset);
   }
 }
+
 function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
+
   if (!modules) {
     return;
   }
+
   if (!modules[id] && bundle.parent) {
     return hmrAcceptCheck(bundle.parent, id);
   }
+
   if (checkedAssets[id]) {
     return;
   }
+
   checkedAssets[id] = true;
   var cached = bundle.cache[id];
   assetsToAccept.push([bundle, id]);
+
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     return true;
   }
+
   return getParents(global.parcelRequire, id).some(function (id) {
     return hmrAcceptCheck(global.parcelRequire, id);
   });
 }
+
 function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
+
   if (cached) {
     cached.hot.data = bundle.hotData;
   }
+
   if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
     cached.hot._disposeCallbacks.forEach(function (cb) {
       cb(bundle.hotData);
     });
   }
+
   delete bundle.cache[id];
   bundle(id);
   cached = bundle.cache[id];
+
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     cached.hot._acceptCallbacks.forEach(function (cb) {
       cb();
     });
+
     return true;
   }
 }

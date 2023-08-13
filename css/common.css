@@ -150,3 +150,11 @@ textarea {
 textarea {
     resize: none;
 }
+
+.js-alert {
+    visibility: visible
+}
+
+.js-alert is-hidden {
+    visibility: hidden;
+}

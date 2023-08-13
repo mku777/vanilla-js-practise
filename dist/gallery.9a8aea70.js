@@ -1704,54 +1704,70 @@ exports["default"] = _default;
 global.SimpleLightbox = SimpleLightbox;
 },{}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
+
 function getBundleURLCached() {
   if (!bundleURL) {
     bundleURL = getBundleURL();
   }
+
   return bundleURL;
 }
+
 function getBundleURL() {
   // Attempt to find the URL of the current script and use that as the base URL
   try {
     throw new Error();
   } catch (err) {
     var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
     if (matches) {
       return getBaseURL(matches[0]);
     }
   }
+
   return '/';
 }
+
 function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
 }
+
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 },{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
+
 function updateLink(link) {
   var newLink = link.cloneNode();
+
   newLink.onload = function () {
     link.remove();
   };
+
   newLink.href = link.href.split('?')[0] + '?' + Date.now();
   link.parentNode.insertBefore(newLink, link.nextSibling);
 }
+
 var cssTimeout = null;
+
 function reloadCSS() {
   if (cssTimeout) {
     return;
   }
+
   cssTimeout = setTimeout(function () {
     var links = document.querySelectorAll('link[rel="stylesheet"]');
+
     for (var i = 0; i < links.length; i++) {
       if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
         updateLink(links[i]);
       }
     }
+
     cssTimeout = null;
   }, 50);
 }
+
 module.exports = reloadCSS;
 },{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/simplelightbox/dist/simple-lightbox.min.css":[function(require,module,exports) {
 
@@ -1766,9 +1782,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.galleryItems = void 0;
+
 var _simplelightbox = _interopRequireDefault(require("simplelightbox"));
+
 require("simplelightbox/dist/simple-lightbox.min.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var galleryItems = [{
   preview: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg",
   original: "https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg",
@@ -1809,24 +1829,18 @@ var galleryItems = [{
 exports.galleryItems = galleryItems;
 var galleryEl = document.querySelector(".gallery");
 var myMarkUp = createGalleryMarkup(galleryItems);
-galleryEl.innerHTML = myMarkUp;
-
-// galleryEl.addEventListener("click", onModalOpen);
-
+galleryEl.innerHTML = myMarkUp; // galleryEl.addEventListener("click", onModalOpen);
 // function onModalOpen(e) {
 //   e.preventDefault();
 //   if (event.target.classList.value !== "gallery__image") {
 //     return;
 //   }
-
 //   const instance = basicLightbox.create(
 //     `
 // 		<img width="1400" height="900" src="${e.target.dataset.source}">
 // 	`
 //   );
-
 //   instance.show();
-
 //   galleryEl.addEventListener("keydown", (e) => {
 //     if (e.code === "Escape") {
 //       instance.close();
@@ -1839,6 +1853,7 @@ function createGalleryMarkup(gallery) {
     return "<li class=\"gallery__item\">\n  <a class=\"gallery__link\" href=\"".concat(item.original, "\">\n    <img\n      class=\"gallery__image\"\n      src= \"").concat(item.preview, "\"\n      data-source= \"").concat(item.original, "\"\n      alt=\"").concat(item.description, "\"\n    />\n  </a>\n</li>");
   }).join("");
 }
+
 var lightbox = new _simplelightbox.default(".gallery a", {
   captionsData: "alt",
   captionPosition: "top",
@@ -1849,6 +1864,7 @@ var lightbox = new _simplelightbox.default(".gallery a", {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
+
 function Module(moduleName) {
   OldModule.call(this, moduleName);
   this.hot = {
@@ -1864,32 +1880,37 @@ function Module(moduleName) {
   };
   module.bundle.hotData = null;
 }
+
 module.bundle.Module = Module;
 var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
+
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52411" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62313" + '/');
+
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
     var data = JSON.parse(event.data);
+
     if (data.type === 'update') {
       var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
           var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
           if (didAccept) {
             handled = true;
           }
         }
-      });
+      }); // Enable HMR for CSS by default.
 
-      // Enable HMR for CSS by default.
       handled = handled || data.assets.every(function (asset) {
         return asset.type === 'css' && asset.generated.js;
       });
+
       if (handled) {
         console.clear();
         data.assets.forEach(function (asset) {
@@ -1898,21 +1919,24 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else if (location.reload) {
-        // `location` global exists in a web worker context but lacks `.reload()` function.
-        location.reload();
+      } else {
+        window.location.reload();
       }
     }
+
     if (data.type === 'reload') {
       ws.close();
+
       ws.onclose = function () {
         location.reload();
       };
     }
+
     if (data.type === 'error-resolved') {
       console.log('[parcel] ✨ Error resolved');
       removeErrorOverlay();
     }
+
     if (data.type === 'error') {
       console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
       removeErrorOverlay();
@@ -1921,17 +1945,19 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     }
   };
 }
+
 function removeErrorOverlay() {
   var overlay = document.getElementById(OVERLAY_ID);
+
   if (overlay) {
     overlay.remove();
   }
 }
+
 function createErrorOverlay(data) {
   var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID;
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
 
-  // html encode message and stack trace
   var message = document.createElement('div');
   var stackTrace = document.createElement('pre');
   message.innerText = data.error.message;
@@ -1939,31 +1965,41 @@ function createErrorOverlay(data) {
   overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
   return overlay;
 }
+
 function getParents(bundle, id) {
   var modules = bundle.modules;
+
   if (!modules) {
     return [];
   }
+
   var parents = [];
   var k, d, dep;
+
   for (k in modules) {
     for (d in modules[k][1]) {
       dep = modules[k][1][d];
+
       if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
         parents.push(k);
       }
     }
   }
+
   if (bundle.parent) {
     parents = parents.concat(getParents(bundle.parent, id));
   }
+
   return parents;
 }
+
 function hmrApply(bundle, asset) {
   var modules = bundle.modules;
+
   if (!modules) {
     return;
   }
+
   if (modules[asset.id] || !bundle.parent) {
     var fn = new Function('require', 'module', 'exports', asset.generated.js);
     asset.isNew = !modules[asset.id];
@@ -1972,45 +2008,58 @@ function hmrApply(bundle, asset) {
     hmrApply(bundle.parent, asset);
   }
 }
+
 function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
+
   if (!modules) {
     return;
   }
+
   if (!modules[id] && bundle.parent) {
     return hmrAcceptCheck(bundle.parent, id);
   }
+
   if (checkedAssets[id]) {
     return;
   }
+
   checkedAssets[id] = true;
   var cached = bundle.cache[id];
   assetsToAccept.push([bundle, id]);
+
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     return true;
   }
+
   return getParents(global.parcelRequire, id).some(function (id) {
     return hmrAcceptCheck(global.parcelRequire, id);
   });
 }
+
 function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
+
   if (cached) {
     cached.hot.data = bundle.hotData;
   }
+
   if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
     cached.hot._disposeCallbacks.forEach(function (cb) {
       cb(bundle.hotData);
     });
   }
+
   delete bundle.cache[id];
   bundle(id);
   cached = bundle.cache[id];
+
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     cached.hot._acceptCallbacks.forEach(function (cb) {
       cb();
     });
+
     return true;
   }
 }

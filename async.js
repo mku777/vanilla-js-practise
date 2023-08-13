@@ -25,19 +25,37 @@
 // }
 
 
-const logger = (time) => {
-    console.log(`Лог каждые ${time} ms - ${Date.now()}`);
+// const logger = (time) => {
+//     console.log(`Лог каждые ${time} ms - ${Date.now()}`);
+// }
+
+// console.log('до вызова setInterval');
+// const timerId = setInterval(logger, 3000, 3000);
+// console.log("после вызова setInterval");
+
+// const shouldCancelTimer = Math.random() > 0.3;
+// console.log(shouldCancelTimer);
+
+// if (shouldCancelTimer) {
+//   clearInterval(timerId);
+// }
+
+const alertEl = document.querySelector('.js-alert');
+
+alertEl.addEventListener('click', onAlert);
+
+showNotify();
+
+function onAlert() {
+  hideNotify();
 }
 
-console.log('до вызова setInterval');
-const timerId = setInterval(logger, 3000, 3000);
-console.log("после вызова setInterval");
+function showNotify() {
+  alertEl.classList.add('is-visible');
+}
 
-const shouldCancelTimer = Math.random() > 0.3;
-console.log(shouldCancelTimer);
-
-if (shouldCancelTimer) {
-  clearInterval(timerId);
+function hideNotify() {
+  alertEl.classList.remove('is-visible');
 }
 
 

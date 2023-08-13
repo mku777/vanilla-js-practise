@@ -151,4 +151,12 @@ textarea {
     resize: none;
 }
 
+.js-alert {
+    visibility: visible
+}
+
+.js-alert is-hidden {
+    visibility: hidden;
+}
+
 /*# sourceMappingURL=/common.b1e2d4b4.css.map */
