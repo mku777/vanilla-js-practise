@@ -1,6 +1,3 @@
-import def from './entities/arrays'
-console.log(def);
-
 // const refs = {
 //   parrent: document.querySelector("#parent"),
 //   child: document.querySelector("#child"),

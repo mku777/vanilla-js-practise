@@ -124,26 +124,34 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getRandomHexColor;
-
 // addEventListener('click', (evt) => {
 //     const navRef = document.querySelector("ul");
 //     console.log(navRef);
+
 //     const navLinksRef = navRef.querySelector("li");
 //     console.log(navLinksRef);
 // })
+
 // const mainButton = document.createElement("button");
 // mainButton.classList.add('btn-primary');
 // mainButton.textContent = "super button";
 // console.log(mainButton);
+
 // const imageEl = document.querySelector(".hero-image");
+
 // const navAllEl = document.querySelector(".site__nav--list");
+
 // navAllEl.addEventListener("click", () => {
 //     navAllEl.classList.toggle("super-band");
 // })
+
 // const newListEl = document.createElement("li");
 // newListEl.textContent = "Emperor";
+
 // navAllEl.appendChild(newListEl);
+
 // navAllEl.insertBefore(mainButton, navAllEl.firstChild);
+
 // const colorPicker = [
 //   {
 //     label: "DarkRed",
@@ -166,9 +174,11 @@ exports.default = getRandomHexColor;
 //     color: "#8B008B",
 //   },
 // ];
+
 // const pickerWrap = document.querySelector("div");
 // pickerWrap.classList.add("picker-wrap");
 // console.log(pickerWrap);
+
 // const elements = colorPicker.map(picker => {
 //     const buttonPicker = document.createElement("button");
 //     buttonPicker.type = "button";
@@ -177,6 +187,7 @@ exports.default = getRandomHexColor;
 //     buttonPicker.style.backgroundColor = picker.color;
 //     return buttonPicker;
 // })
+
 // for (let i = 0; i < colorPicker.length; i++) {
 //
 //   const picker = colorPicker[i];
@@ -186,6 +197,7 @@ exports.default = getRandomHexColor;
 //   buttonPicker.style.backgroundColor = picker.color;
 //   elements.push(buttonPicker);
 // }
+
 // function makeColorPickerOptions(options) {
 //     return options.map((picker) => {
 //       const buttonPicker = document.createElement("button");
@@ -196,9 +208,13 @@ exports.default = getRandomHexColor;
 //       return buttonPicker;
 //     });
 // }
+
 // const elements = makeColorPickerOptions(colorPicker);
+
 // console.log(elements);
+
 // pickerWrap.append(...elements);
+
 // const playlist = {
 //   album: "The Fat of the Land",
 //   tracks: ["track1", "track2", "track3", "track4", "track5", "track6"],
@@ -207,23 +223,30 @@ exports.default = getRandomHexColor;
 //   year: "1997",
 //   genre: "rave",
 // };
+
 // const artistEl = document.querySelector(".artistEl");
 // const albumEl = document.createElement("p");
 // const tracksEl = document.createElement("p");
 // const countEl = document.createElement("p");
+
 // albumEl.textContent = playlist.album;
 // tracksEl.textContent = playlist.tracks;
 // countEl.textContent = playlist.trackCount;
+
 // artistEl.append(albumEl, tracksEl, countEl);
+
 // console.log(artistEl);
+
 // const categoriesEL = document.querySelectorAll(".item");
 // console.log(`Number of categories: ${categoriesEL.length}`);
+
 // categoriesEL.forEach(item => {
 //   const titleEl = item.querySelector("h2");
 //   console.log(`Category: ${titleEl.textContent}`);
 //   const liEl = item.querySelectorAll("li");
 //   console.log(`Elements : ${liEl.length}`);
 // });
+
 // const ingredients = [
 //   "Potatoes",
 //   "Mushrooms",
@@ -232,7 +255,9 @@ exports.default = getRandomHexColor;
 //   "Herbs",
 //   "Condiments",
 // ];
+
 // const ulEl = document.querySelector("#ingredients");
+
 // ingredients.map((item) => {
 //   const itemElements = document.createElement("li");
 //   itemElements.className = 'item';
@@ -240,6 +265,7 @@ exports.default = getRandomHexColor;
 //   console.log(itemElements)
 //   ulEl.append(itemElements);
 // });
+
 // const images = [
 //   {
 //     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -254,36 +280,49 @@ exports.default = getRandomHexColor;
 //     alt: "Group of Horses Running",
 //   },
 // ];
+
 // const ulEl = document.querySelector(".gallery");
 // console.log(ulEl);
+
 // const gallery = images.map(({ url, alt }) => {
 //   return `<li><img src=${url} alt=${alt} width="250"></img></li>`;
 // });
+
 // ulEl.insertAdjacentHTML("beforeend", gallery);
+
 // ulEl.style.flexDirection = "column";
+
 // const incrementButton = document.querySelector("[data-action=increment");
 // const decrementButton = document.querySelector("[data-action=decrement");
 // const valueCounter = document.querySelector("#value");
+
 // let value = 0;
+
 // incrementButton.addEventListener("click", () => {
 //   value += 1;
 //   valueCounter.textContent = value;
 // });
+
 // decrementButton.addEventListener("click", () => {
 //   value -= 1;
 //   valueCounter.textContent = value;
 // });
+
 // const inputEl = document.querySelector("#name-input");
 // const spanEl = document.querySelector("#name-output");
+
 // inputEl.addEventListener("input", (e) => {
 //   spanEl.textContent = e.currentTarget.value;
 //   if (e.currentTarget.value === "") {
 //     spanEl.textContent = 'Anonymous';
 //   }
 // })
+
 // const inputEl = document.querySelector("#validation-input");
+
 // let dataEl = inputEl.dataset.length;
 // console.log(dataEl);
+
 // inputEl.addEventListener("blur", () => {
 //   if (inputEl.value.length !== Number(dataEl)) {
 //     return inputEl.classList.add("invalid");
@@ -291,13 +330,18 @@ exports.default = getRandomHexColor;
 //   inputEl.classList.remove("invalid");
 //   return inputEl.classList.add("valid");
 // });
+
 // console.log(inputEl);
+
 // const inputEl = document.querySelector("#font-size-control");
 // const textEl = document.querySelector("#text");
+
 // inputEl.addEventListener("input", (e) => {
 //  textEl.style.fontSize = `${e.currentTarget.value}px`;
 // });
+
 // const loginFormRef = document.querySelector(".login-form");
+
 // loginFormRef.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   const email = e.currentTarget.email.value;
@@ -313,27 +357,35 @@ exports.default = getRandomHexColor;
 //   window.alert("Please fill all fields");
 //     document.querySelector(".login-form").reset();
 // });
+
 // const changeColorButton = document.querySelector(".change-color");
 // const backgroundColor = document.querySelector(".color");
 // const bodyColor = document.querySelector("body");
+
 // changeColorButton.addEventListener("click", () => {
 //   bodyColor.style.backgroundColor = getRandomHexColor();
 //   backgroundColor.textContent = bodyColor.style.backgroundColor;
 // });
+
 function getRandomHexColor() {
   return "#".concat(Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0));
-} // const inputEl = document.querySelector("input");
+}
+
+// const inputEl = document.querySelector("input");
 // const createButton = document.querySelector("[data-create]");
 // const destroyButton = document.querySelector("[data-destroy]");
 // const boxesEl = document.querySelector("#boxes");
+
 // createButton.addEventListener("click", (e) => {
 //   inputEl.value;
 //   createBoxes(inputEl.value);
 //     inputEl.value = "";
 // });
+
 // destroyButton.addEventListener("click", (e) => {
 // boxesEl.innerHTML = "";
 // })
+
 // function createBoxes(amount) {
 //   boxesEl.innerHTML = "";
 //   let basicSize = 30;
@@ -350,7 +402,6 @@ function getRandomHexColor() {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
-
 function Module(moduleName) {
   OldModule.call(this, moduleName);
   this.hot = {
@@ -366,37 +417,32 @@ function Module(moduleName) {
   };
   module.bundle.hotData = null;
 }
-
 module.bundle.Module = Module;
 var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
-
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53019" + '/');
-
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56381" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
     var data = JSON.parse(event.data);
-
     if (data.type === 'update') {
       var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
           var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
           if (didAccept) {
             handled = true;
           }
         }
-      }); // Enable HMR for CSS by default.
+      });
 
+      // Enable HMR for CSS by default.
       handled = handled || data.assets.every(function (asset) {
         return asset.type === 'css' && asset.generated.js;
       });
-
       if (handled) {
         console.clear();
         data.assets.forEach(function (asset) {
@@ -405,24 +451,21 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
-
     if (data.type === 'reload') {
       ws.close();
-
       ws.onclose = function () {
         location.reload();
       };
     }
-
     if (data.type === 'error-resolved') {
       console.log('[parcel] ✨ Error resolved');
       removeErrorOverlay();
     }
-
     if (data.type === 'error') {
       console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
       removeErrorOverlay();
@@ -431,19 +474,17 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     }
   };
 }
-
 function removeErrorOverlay() {
   var overlay = document.getElementById(OVERLAY_ID);
-
   if (overlay) {
     overlay.remove();
   }
 }
-
 function createErrorOverlay(data) {
   var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID; // html encode message and stack trace
+  overlay.id = OVERLAY_ID;
 
+  // html encode message and stack trace
   var message = document.createElement('div');
   var stackTrace = document.createElement('pre');
   message.innerText = data.error.message;
@@ -451,41 +492,31 @@ function createErrorOverlay(data) {
   overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
   return overlay;
 }
-
 function getParents(bundle, id) {
   var modules = bundle.modules;
-
   if (!modules) {
     return [];
   }
-
   var parents = [];
   var k, d, dep;
-
   for (k in modules) {
     for (d in modules[k][1]) {
       dep = modules[k][1][d];
-
       if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
         parents.push(k);
       }
     }
   }
-
   if (bundle.parent) {
     parents = parents.concat(getParents(bundle.parent, id));
   }
-
   return parents;
 }
-
 function hmrApply(bundle, asset) {
   var modules = bundle.modules;
-
   if (!modules) {
     return;
   }
-
   if (modules[asset.id] || !bundle.parent) {
     var fn = new Function('require', 'module', 'exports', asset.generated.js);
     asset.isNew = !modules[asset.id];
@@ -494,58 +525,45 @@ function hmrApply(bundle, asset) {
     hmrApply(bundle.parent, asset);
   }
 }
-
 function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
-
   if (!modules) {
     return;
   }
-
   if (!modules[id] && bundle.parent) {
     return hmrAcceptCheck(bundle.parent, id);
   }
-
   if (checkedAssets[id]) {
     return;
   }
-
   checkedAssets[id] = true;
   var cached = bundle.cache[id];
   assetsToAccept.push([bundle, id]);
-
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     return true;
   }
-
   return getParents(global.parcelRequire, id).some(function (id) {
     return hmrAcceptCheck(global.parcelRequire, id);
   });
 }
-
 function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
-
   if (cached) {
     cached.hot.data = bundle.hotData;
   }
-
   if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
     cached.hot._disposeCallbacks.forEach(function (cb) {
       cb(bundle.hotData);
     });
   }
-
   delete bundle.cache[id];
   bundle(id);
   cached = bundle.cache[id];
-
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     cached.hot._acceptCallbacks.forEach(function (cb) {
       cb();
     });
-
     return true;
   }
 }

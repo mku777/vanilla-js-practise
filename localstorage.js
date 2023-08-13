@@ -1,7 +1,6 @@
-import throttle from "lodash.throttle";
-import Vimeo from "@vimeo/player";
-import BSN from 'bootstrap.native';
-console.log(BSN);
+// import throttle from "lodash.throttle";
+// import Vimeo from "@vimeo/player";
+
 
 
 
@@ -52,13 +51,13 @@ console.log(BSN);
 
 
 
- const iframe = document.querySelector("iframe");
- const player = new Vimeo(iframe);
+//  const iframe = document.querySelector("iframe");
+//  const player = new Vimeo(iframe);
 
- player.on("timeupdate", throttle(onTimeUpdate, 1000));
+//  player.on("timeupdate", throttle(onTimeUpdate, 1000));
 
- function onTimeUpdate(data) {
-   localStorage.setItem("videoplayer-current-time", data.seconds);
- }
+//  function onTimeUpdate(data) {
+//    localStorage.setItem("videoplayer-current-time", data.seconds);
+//  }
 
- player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));
+//  player.setCurrentTime(localStorage.getItem("videoplayer-current-time"));

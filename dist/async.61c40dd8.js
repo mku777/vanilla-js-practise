@@ -121,68 +121,87 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 // const logMessage = (message) => {
 //     console.log('Лог при вызове через 3 секунды');
 // }
+
 // console.log('до вызова setTimeout');
+
 // setTimeout(() => {
 //     console.log('внутри колбека для setTimeout');
 // }, 3000)
+
 // console.log("после вызова setTimeout");
+
 // function logger(time) {
 //   console.log(`лог через ${time} ms, потому что не отменили таймер`);
 // }
+
 // const timerId = setTimeout(logger, 2000, 2000);
+
 // const shouldCancelTimer = Math.random() > 0.3;
 // console.log(shouldCancelTimer);
+
 // if (shouldCancelTimer) {
 //   clearTimeout(timerId);
 // }
+
 // const logger = (time) => {
 //     console.log(`Лог каждые ${time} ms - ${Date.now()}`);
 // }
+
 // console.log('до вызова setInterval');
 // const timerId = setInterval(logger, 3000, 3000);
 // console.log("после вызова setInterval");
+
 // const shouldCancelTimer = Math.random() > 0.3;
 // console.log(shouldCancelTimer);
+
 // if (shouldCancelTimer) {
 //   clearInterval(timerId);
 // }
+
 // const alertEl = document.querySelector(".js-alert");
+
 // alertEl.addEventListener("click", onAlert);
 // letTimeOutId = null;
+
 // showNotify();
+
 // function onAlert() {
 //   clearTimeout(timerId);
 //   hideNotify();
 // }
+
 // timerId = setTimeout(function onAlert() {
 //   hideNotify();
 //   console.log("закрываем оповещение");
 // }, 3000);
+
 // function hideNotify() {
 //   alertEl.classList.remove("is-visible");
 // }
+
 // function showNotify() {
 //   alertEl.classList.add("is-visible");
 // }
+
 // ---------- Subscriptions----
-// const PROMT_DELAY = 2000;
-// const MAX_PROMPT_ATTEMTS = 4;
-// let promtCounter = 0;
-// let hasSubscribed = false;
-// const intervalId = setInterval(() => {
-//   if (promtCounter === MAX_PROMPT_ATTEMTS) {
-//     console.log("останавливаем интервал");
-//     clearInterval(intervalId);
-//     return;
-//   }
-//   console.log("подпишись на рассылку ->" + Date.now());
-//   promtCounter += 1;
-// }, PROMT_DELAY);
+
+var PROMT_DELAY = 2000;
+var MAX_PROMPT_ATTEMTS = 4;
+var promtCounter = 0;
+var hasSubscribed = false;
+var intervalId = setInterval(function () {
+  if (promtCounter === MAX_PROMPT_ATTEMTS) {
+    console.log("останавливаем интервал");
+    clearInterval(intervalId);
+    return;
+  }
+  console.log("подпишись на рассылку ->" + Date.now());
+  promtCounter += 1;
+}, PROMT_DELAY);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
-
 function Module(moduleName) {
   OldModule.call(this, moduleName);
   this.hot = {
@@ -198,37 +217,32 @@ function Module(moduleName) {
   };
   module.bundle.hotData = null;
 }
-
 module.bundle.Module = Module;
 var checkedAssets, assetsToAccept;
 var parent = module.bundle.parent;
-
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53019" + '/');
-
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56381" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
     var data = JSON.parse(event.data);
-
     if (data.type === 'update') {
       var handled = false;
       data.assets.forEach(function (asset) {
         if (!asset.isNew) {
           var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
-
           if (didAccept) {
             handled = true;
           }
         }
-      }); // Enable HMR for CSS by default.
+      });
 
+      // Enable HMR for CSS by default.
       handled = handled || data.assets.every(function (asset) {
         return asset.type === 'css' && asset.generated.js;
       });
-
       if (handled) {
         console.clear();
         data.assets.forEach(function (asset) {
@@ -237,24 +251,21 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
-
     if (data.type === 'reload') {
       ws.close();
-
       ws.onclose = function () {
         location.reload();
       };
     }
-
     if (data.type === 'error-resolved') {
       console.log('[parcel] ✨ Error resolved');
       removeErrorOverlay();
     }
-
     if (data.type === 'error') {
       console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
       removeErrorOverlay();
@@ -263,19 +274,17 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     }
   };
 }
-
 function removeErrorOverlay() {
   var overlay = document.getElementById(OVERLAY_ID);
-
   if (overlay) {
     overlay.remove();
   }
 }
-
 function createErrorOverlay(data) {
   var overlay = document.createElement('div');
-  overlay.id = OVERLAY_ID; // html encode message and stack trace
+  overlay.id = OVERLAY_ID;
 
+  // html encode message and stack trace
   var message = document.createElement('div');
   var stackTrace = document.createElement('pre');
   message.innerText = data.error.message;
@@ -283,41 +292,31 @@ function createErrorOverlay(data) {
   overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
   return overlay;
 }
-
 function getParents(bundle, id) {
   var modules = bundle.modules;
-
   if (!modules) {
     return [];
   }
-
   var parents = [];
   var k, d, dep;
-
   for (k in modules) {
     for (d in modules[k][1]) {
       dep = modules[k][1][d];
-
       if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
         parents.push(k);
       }
     }
   }
-
   if (bundle.parent) {
     parents = parents.concat(getParents(bundle.parent, id));
   }
-
   return parents;
 }
-
 function hmrApply(bundle, asset) {
   var modules = bundle.modules;
-
   if (!modules) {
     return;
   }
-
   if (modules[asset.id] || !bundle.parent) {
     var fn = new Function('require', 'module', 'exports', asset.generated.js);
     asset.isNew = !modules[asset.id];
@@ -326,58 +325,45 @@ function hmrApply(bundle, asset) {
     hmrApply(bundle.parent, asset);
   }
 }
-
 function hmrAcceptCheck(bundle, id) {
   var modules = bundle.modules;
-
   if (!modules) {
     return;
   }
-
   if (!modules[id] && bundle.parent) {
     return hmrAcceptCheck(bundle.parent, id);
   }
-
   if (checkedAssets[id]) {
     return;
   }
-
   checkedAssets[id] = true;
   var cached = bundle.cache[id];
   assetsToAccept.push([bundle, id]);
-
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     return true;
   }
-
   return getParents(global.parcelRequire, id).some(function (id) {
     return hmrAcceptCheck(global.parcelRequire, id);
   });
 }
-
 function hmrAcceptRun(bundle, id) {
   var cached = bundle.cache[id];
   bundle.hotData = {};
-
   if (cached) {
     cached.hot.data = bundle.hotData;
   }
-
   if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
     cached.hot._disposeCallbacks.forEach(function (cb) {
       cb(bundle.hotData);
     });
   }
-
   delete bundle.cache[id];
   bundle(id);
   cached = bundle.cache[id];
-
   if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
     cached.hot._acceptCallbacks.forEach(function (cb) {
       cb();
     });
-
     return true;
   }
 }
