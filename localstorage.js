@@ -1,6 +1,7 @@
 import throttle from "lodash.throttle";
 import Vimeo from "@vimeo/player";
 import BSN from 'bootstrap.native';
+console.log(BSN);
 
 
 
