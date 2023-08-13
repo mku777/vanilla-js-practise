@@ -146,21 +146,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 // if (shouldCancelTimer) {
 //   clearInterval(timerId);
 // }
-var alertEl = document.querySelector('.js-alert');
-alertEl.addEventListener('click', onAlert);
-showNotify();
-
-function onAlert() {
-  hideNotify();
-}
-
-function showNotify() {
-  alertEl.classList.add('is-visible');
-}
-
-function hideNotify() {
-  alertEl.classList.remove('is-visible');
-}
+// const alertEl = document.querySelector(".js-alert");
+// alertEl.addEventListener("click", onAlert);
+// letTimeOutId = null;
+// showNotify();
+// function onAlert() {
+//   clearTimeout(timerId);
+//   hideNotify();
+// }
+// timerId = setTimeout(function onAlert() {
+//   hideNotify();
+//   console.log("закрываем оповещение");
+// }, 3000);
+// function hideNotify() {
+//   alertEl.classList.remove("is-visible");
+// }
+// function showNotify() {
+//   alertEl.classList.add("is-visible");
+// }
+// ---------- Subscriptions----
+// const PROMT_DELAY = 2000;
+// const MAX_PROMPT_ATTEMTS = 4;
+// let promtCounter = 0;
+// let hasSubscribed = false;
+// const intervalId = setInterval(() => {
+//   if (promtCounter === MAX_PROMPT_ATTEMTS) {
+//     console.log("останавливаем интервал");
+//     clearInterval(intervalId);
+//     return;
+//   }
+//   console.log("подпишись на рассылку ->" + Date.now());
+//   promtCounter += 1;
+// }, PROMT_DELAY);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -189,7 +206,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62313" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57304" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

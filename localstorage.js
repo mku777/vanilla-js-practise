@@ -1,5 +1,8 @@
 import throttle from "lodash.throttle";
 import Vimeo from "@vimeo/player";
+import BSN from 'bootstrap.native';
+
+
 
 // const formEl = document.querySelector(".feedback-form");
 // const textEl = document.querySelector(".feedback-form textarea");
