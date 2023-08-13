@@ -65,8 +65,6 @@
 
 // ---------- Subscriptions----
 
-// const PROMT_DELAY = 2000;
-// const MAX_PROMPT_ATTEMTS = 4;
 
 // let promtCounter = 0;
 // let hasSubscribed = false;
@@ -81,8 +79,49 @@
 //   promtCounter += 1;
 // }, PROMT_DELAY);
 
-const myModal = new BSN.Modal("#exampleModal");
+// import { Modal } from 'bootstrap.native';
 
-console.log(myModal);
 
-myModal.show();
+// const modal = new Modal("#exampleModal");
+// const refs = {
+//   modal: document.querySelector("#exampleModal"),
+// };
+
+
+
+// const PROMT_DELAY = 1000;
+// const MAX_PROMPT_ATTEMTS = 4;
+
+// refs.modal.addEventListener("hidden.bs.modal", () => {
+//   console.log("поймали закрытие");
+//   setTimeout(() => {
+//     modal.show();
+//   }, PROMT_DELAY);
+// });
+
+
+// const date = new Date();
+
+
+// console.log('date ->>', date);
+
+
+// setTimeout(() => {
+//     const date1 = new Date();
+//     console.log("date ->>", date);
+//     console.log('date1 ->>', date1);
+//     console.log(date1 - date);
+// }, 2000)
+
+const timer = {
+    start() {
+        const now = Date.now();
+      
+        setInterval(() => {
+            console.log('раз в секунду вызов')
+        
+        }, 1000);
+    },
+}
+
+timer.start();

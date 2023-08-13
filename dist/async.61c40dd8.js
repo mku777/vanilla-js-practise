@@ -185,9 +185,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 // ---------- Subscriptions----
 
-// const PROMT_DELAY = 2000;
-// const MAX_PROMPT_ATTEMTS = 4;
-
 // let promtCounter = 0;
 // let hasSubscribed = false;
 
@@ -201,9 +198,43 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //   promtCounter += 1;
 // }, PROMT_DELAY);
 
-var myModal = new BSN.Modal("#exampleModal");
-console.log(myModal);
-myModal.show();
+// import { Modal } from 'bootstrap.native';
+
+// const modal = new Modal("#exampleModal");
+// const refs = {
+//   modal: document.querySelector("#exampleModal"),
+// };
+
+// const PROMT_DELAY = 1000;
+// const MAX_PROMPT_ATTEMTS = 4;
+
+// refs.modal.addEventListener("hidden.bs.modal", () => {
+//   console.log("поймали закрытие");
+//   setTimeout(() => {
+//     modal.show();
+//   }, PROMT_DELAY);
+// });
+
+// const date = new Date();
+
+// console.log('date ->>', date);
+
+// setTimeout(() => {
+//     const date1 = new Date();
+//     console.log("date ->>", date);
+//     console.log('date1 ->>', date1);
+//     console.log(date1 - date);
+// }, 2000)
+
+var timer = {
+  start: function start() {
+    var now = Date.now();
+    setInterval(function () {
+      console.log('раз в секунду вызов');
+    }, 1000);
+  }
+};
+timer.start();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -229,7 +260,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57089" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49499" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
