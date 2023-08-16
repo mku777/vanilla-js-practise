@@ -1,3 +1,7 @@
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+
+
 // const logMessage = (message) => {
 //     console.log('Лог при вызове через 3 секунды');
 // }
@@ -65,7 +69,6 @@
 
 // ---------- Subscriptions----
 
-
 // let promtCounter = 0;
 // let hasSubscribed = false;
 
@@ -81,13 +84,10 @@
 
 // import { Modal } from 'bootstrap.native';
 
-
 // const modal = new Modal("#exampleModal");
 // const refs = {
 //   modal: document.querySelector("#exampleModal"),
 // };
-
-
 
 // const PROMT_DELAY = 1000;
 // const MAX_PROMPT_ATTEMTS = 4;
@@ -99,12 +99,9 @@
 //   }, PROMT_DELAY);
 // });
 
-
 // const date = new Date();
 
-
 // console.log('date ->>', date);
-
 
 // setTimeout(() => {
 //     const date1 = new Date();
@@ -117,7 +114,6 @@
 //     return String(value).padStart(2, '0');
 // }
 
-
 // function getTimeComponents(time) {
 //   const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),) ;
 //   const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)),) ;
@@ -129,40 +125,85 @@
 // const timer = {
 //     start() {
 //         const nowTime = Date.now();
-      
+
 //         setInterval(() => {
 //             const currentTime = Date.now();
 //             const deltaTime = currentTime - nowTime;
 //             const {hours, mins, secs} = getTimeComponents(deltaTime);
 //             console.log(`${hours}:${mins}:${secs}`)
-        
+
 //         }, 1000);
 //     },
 // }
 
 // // timer.start();
 
-const startButtonEl = document.querySelector("[data-start]");
-const stopButtonEl = document.querySelector("[data-stop]");
-const bodyEl = document.querySelector("body");
-let intervalId = null;
+// -----color-switcher------
 
-startButtonEl.addEventListener("click", () => {
-  intervalId = setInterval(
-    () => (bodyEl.style.backgroundColor = getRandomHexColor()),
-    250
-  );
-  if (intervalId) {
-    startButtonEl.setAttribute("disabled", true);
-  }
-});
+// const startButtonEl = document.querySelector("[data-start]");
+// const stopButtonEl = document.querySelector("[data-stop]");
+// const bodyEl = document.querySelector("body");
+// let intervalId = null;
 
-stopButtonEl.addEventListener("click", () => {
-  clearInterval(intervalId);
-});
+// startButtonEl.addEventListener("click", () => {
+//   intervalId = setInterval(
+//     () => (bodyEl.style.backgroundColor = getRandomHexColor()),
+//     250
+//   );
+//   if (intervalId) {
+//     stopButtonEl.removeAttribute("disabled", true);
+//     startButtonEl.setAttribute("disabled", true);
+//   }
+// });
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
+// stopButtonEl.addEventListener("click", () => {
+//   clearInterval(intervalId);
+//   startButtonEl.removeAttribute("disabled", true);
+//   stopButtonEl.setAttribute("disabled", true);
+// });
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// ----------timer --------
+
+function convertMs(ms) {
+  // Number of milliseconds per unit of time
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  // Remaining days
+  const days = Math.floor(ms / day);
+  // Remaining hours
+  const hours = Math.floor((ms % day) / hour);
+  // Remaining minutes
+  const minutes = Math.floor(((ms % day) % hour) / minute);
+  // Remaining seconds
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+  return { days, hours, minutes, seconds };
 }
+
+console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+console.log(convertMs(2414343440000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+
+const timerElement = document.querySelector("#datetime-picker");
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    console.log(selectedDates[0]);
+  },
+};
+flatpickr(timerElement, options);
+
+
+
