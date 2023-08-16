@@ -226,15 +226,52 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //     console.log(date1 - date);
 // }, 2000)
 
-var timer = {
-  start: function start() {
-    var now = Date.now();
-    setInterval(function () {
-      console.log('раз в секунду вызов');
-    }, 1000);
+// function pad(value) {
+//     return String(value).padStart(2, '0');
+// }
+
+// function getTimeComponents(time) {
+//   const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),) ;
+//   const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)),) ;
+//   const secs = pad(Math.floor((time % (1000 * 60)) / 1000),); ;
+
+//   return { hours, mins, secs };
+// }
+
+// const timer = {
+//     start() {
+//         const nowTime = Date.now();
+
+//         setInterval(() => {
+//             const currentTime = Date.now();
+//             const deltaTime = currentTime - nowTime;
+//             const {hours, mins, secs} = getTimeComponents(deltaTime);
+//             console.log(`${hours}:${mins}:${secs}`)
+
+//         }, 1000);
+//     },
+// }
+
+// // timer.start();
+
+var startButtonEl = document.querySelector("[data-start]");
+var stopButtonEl = document.querySelector("[data-stop]");
+var bodyEl = document.querySelector("body");
+var intervalId = null;
+startButtonEl.addEventListener("click", function () {
+  intervalId = setInterval(function () {
+    return bodyEl.style.backgroundColor = getRandomHexColor();
+  }, 250);
+  if (intervalId) {
+    startButtonEl.setAttribute("disabled", true);
   }
-};
-timer.start();
+});
+stopButtonEl.addEventListener("click", function () {
+  clearInterval(intervalId);
+});
+function getRandomHexColor() {
+  return "#".concat(Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0));
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -260,7 +297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49499" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64156" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

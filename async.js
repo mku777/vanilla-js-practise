@@ -113,15 +113,56 @@
 //     console.log(date1 - date);
 // }, 2000)
 
-const timer = {
-    start() {
-        const now = Date.now();
-      
-        setInterval(() => {
-            console.log('раз в секунду вызов')
-        
-        }, 1000);
-    },
-}
+// function pad(value) {
+//     return String(value).padStart(2, '0');
+// }
 
-timer.start();
+
+// function getTimeComponents(time) {
+//   const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),) ;
+//   const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)),) ;
+//   const secs = pad(Math.floor((time % (1000 * 60)) / 1000),); ;
+
+//   return { hours, mins, secs };
+// }
+
+// const timer = {
+//     start() {
+//         const nowTime = Date.now();
+      
+//         setInterval(() => {
+//             const currentTime = Date.now();
+//             const deltaTime = currentTime - nowTime;
+//             const {hours, mins, secs} = getTimeComponents(deltaTime);
+//             console.log(`${hours}:${mins}:${secs}`)
+        
+//         }, 1000);
+//     },
+// }
+
+// // timer.start();
+
+const startButtonEl = document.querySelector("[data-start]");
+const stopButtonEl = document.querySelector("[data-stop]");
+const bodyEl = document.querySelector("body");
+let intervalId = null;
+
+startButtonEl.addEventListener("click", () => {
+  intervalId = setInterval(
+    () => (bodyEl.style.backgroundColor = getRandomHexColor()),
+    250
+  );
+  if (intervalId) {
+    startButtonEl.setAttribute("disabled", true);
+  }
+});
+
+stopButtonEl.addEventListener("click", () => {
+  clearInterval(intervalId);
+});
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
