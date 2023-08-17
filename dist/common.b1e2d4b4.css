@@ -167,4 +167,16 @@ visibility: hidden;
     visibility: visible;
 }
 
+.field {
+    padding: 15px;
+    outline: 1px solid grey;
+    display: flex;
+ width: 250px;
+    justify-content: center;
+}
+
+.value {
+    margin-right: 10px;
+}
+
 /*# sourceMappingURL=/common.b1e2d4b4.css.map */
