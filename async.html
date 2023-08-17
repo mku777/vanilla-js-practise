@@ -13,7 +13,22 @@
 
 </head>
 <body>
-    <input type="text" id="datetime-picker" />
+    <form class="form">
+        <label>
+            First delay (ms)
+            <input type="number" name="delay" required />
+        </label>
+        <label>
+            Delay step (ms)
+            <input type="number" name="step" required />
+        </label>
+        <label>
+            Amount
+            <input type="number" name="amount" required />
+        </label>
+        <button type="submit">Create promises</button>
+    </form>
+    <!-- <input type="text" id="datetime-picker" />
     <button type="button" data-start>Start</button>
     
     <div class="timer">
@@ -33,7 +48,7 @@
             <span class="value" data-seconds>00</span>
             <span class="label">Seconds</span>
         </div>
-    </div>
+    </div> -->
     <!-- <button type="button" data-start>Start</button>
     <button type="button" data-stop>Stop</button> -->
 <p><a href="index.html">Go back</a></p>

@@ -172,83 +172,99 @@ import "flatpickr/dist/flatpickr.min.css";
 
 // ----------timer --------
 
-const startButtonEl = document.querySelector("[data-start]");
-const daysEl = document.querySelector("[data-days]");
-const hoursEl = document.querySelector("[data-hours]");
-const minutesEl = document.querySelector("[data-minutes]");
-const secondsEl = document.querySelector("[data-seconds]");
-startButtonEl.setAttribute("disabled", true);
+// const startButtonEl = document.querySelector("[data-start]");
+// const daysEl = document.querySelector("[data-days]");
+// const hoursEl = document.querySelector("[data-hours]");
+// const minutesEl = document.querySelector("[data-minutes]");
+// const secondsEl = document.querySelector("[data-seconds]");
+// startButtonEl.setAttribute("disabled", true);
 
-function pad(value) {
-  return String(value).padStart(2, "0");
-}
+// function pad(value) {
+//   return String(value).padStart(2, "0");
+// }
 
-function convertMs(ms) {
-  // Number of milliseconds per unit of time
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
+// function convertMs(ms) {
+//   // Number of milliseconds per unit of time
+//   const second = 1000;
+//   const minute = second * 60;
+//   const hour = minute * 60;
+//   const day = hour * 24;
 
-  // Remaining days
-  const days = pad(Math.floor(ms / day));
-  // Remaining hours
-  const hours = pad(Math.floor((ms % day) / hour));
-  // Remaining minutes
-  const minutes = pad(Math.floor(((ms % day) % hour) / minute));
-  // Remaining seconds
-  const seconds = pad(Math.floor((((ms % day) % hour) % minute) / second));
+//   // Remaining days
+//   const days = pad(Math.floor(ms / day));
+//   // Remaining hours
+//   const hours = pad(Math.floor((ms % day) / hour));
+//   // Remaining minutes
+//   const minutes = pad(Math.floor(((ms % day) % hour) / minute));
+//   // Remaining seconds
+//   const seconds = pad(Math.floor((((ms % day) % hour) % minute) / second));
 
-  return { days, hours, minutes, seconds };
-}
+//   return { days, hours, minutes, seconds };
+// }
 
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(2414343440000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+// console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+// console.log(convertMs(2414343440000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
-const timerElement = document.querySelector("#datetime-picker");
-const options = {
-  enableTime: true,
-  time_24hr: true,
-  defaultDate: new Date(),
-  minuteIncrement: 1,
-  onClose(selectedDates) {
-    console.log(selectedDates[0]);
-    const nowTime = Date.now();
-    let intervalId = null;
-    startButtonEl.removeAttribute("disabled", true);
-    if (nowTime > selectedDates[0]) {
-      return Notify.failure("Please choose a date in the future");
-    }
+// const timerElement = document.querySelector("#datetime-picker");
+// const options = {
+//   enableTime: true,
+//   time_24hr: true,
+//   defaultDate: new Date(),
+//   minuteIncrement: 1,
+//   onClose(selectedDates) {
+//     console.log(selectedDates[0]);
+//     const nowTime = Date.now();
+//     let intervalId = null;
+//     startButtonEl.removeAttribute("disabled", true);
+//     if (nowTime > selectedDates[0]) {
+//       return Notify.failure("Please choose a date in the future");
+//     }
 
-    startButtonEl.addEventListener("click", () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-        return;
-      }
-      intervalId = setInterval(() => {
-        const currentTime = Date.now();
-        const deltaTime = selectedDates[0] - currentTime;
+//     startButtonEl.addEventListener("click", () => {
+//       if (intervalId) {
+//         clearInterval(intervalId);
+//         return;
+//       }
+//       intervalId = setInterval(() => {
+//         const currentTime = Date.now();
+//         const deltaTime = selectedDates[0] - currentTime;
 
-        const { days, hours, minutes, seconds } = convertMs(deltaTime);
-        startButtonEl.setAttribute("disabled", true);
+//         const { days, hours, minutes, seconds } = convertMs(deltaTime);
+//         startButtonEl.setAttribute("disabled", true);
 
-        if (deltaTime < 0) {
-          daysEl.textContent = "00";
-          hoursEl.textContent = "00";
-          minutesEl.textContent = "00";
-          secondsEl.textContent = "00";
-        } else {
-          console.log(`${days}:${hours}:${minutes}:${seconds}`);
-          daysEl.textContent = days;
-          hoursEl.textContent = hours;
-          minutesEl.textContent = minutes;
-          secondsEl.textContent = seconds;
-        }
-      }, 1000);
-    });
-  },
-};
-flatpickr(timerElement, options);
+//         if (deltaTime < 0) {
+//           daysEl.textContent = "00";
+//           hoursEl.textContent = "00";
+//           minutesEl.textContent = "00";
+//           secondsEl.textContent = "00";
+//         } else {
+//           console.log(`${days}:${hours}:${minutes}:${seconds}`);
+//           daysEl.textContent = days;
+//           hoursEl.textContent = hours;
+//           minutesEl.textContent = minutes;
+//           secondsEl.textContent = seconds;
+//         }
+//       }, 1000);
+//     });
+//   },
+// };
+// flatpickr(timerElement, options);
 
+// -----------promises ----------------
+
+
+const promise = new Promise((resolve, reject) => {
+  const isOk = Math.random() >= 0.5;
+  
+  if (isOk) {
+    resolve('vipolnili')
+  }
+  else {
+    reject('ne vipolnili')
+  }
+});
+
+console.log(promise);
+ 
 

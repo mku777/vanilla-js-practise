@@ -13,27 +13,42 @@
 
 <script src="/gallery.20afaf5e.js"></script><link rel="stylesheet" href="/async.61c40dd8.css"></head>
 <body>
-    <input type="text" id="datetime-picker">
-    <button type="button" data-start="">Start</button>
+    <form class="form">
+        <label>
+            First delay (ms)
+            <input type="number" name="delay" required="">
+        </label>
+        <label>
+            Delay step (ms)
+            <input type="number" name="step" required="">
+        </label>
+        <label>
+            Amount
+            <input type="number" name="amount" required="">
+        </label>
+        <button type="submit">Create promises</button>
+    </form>
+    <!-- <input type="text" id="datetime-picker" />
+    <button type="button" data-start>Start</button>
     
     <div class="timer">
         <div class="field">
-            <span class="value" data-days="">00</span>
+            <span class="value" data-days>00</span>
             <span class="label">Days</span>
         </div>
         <div class="field">
-            <span class="value" data-hours="">00</span>
+            <span class="value" data-hours>00</span>
             <span class="label">Hours</span>
         </div>
         <div class="field">
-            <span class="value" data-minutes="">00</span>
+            <span class="value" data-minutes>00</span>
             <span class="label">Minutes</span>
         </div>
         <div class="field">
-            <span class="value" data-seconds="">00</span>
+            <span class="value" data-seconds>00</span>
             <span class="label">Seconds</span>
         </div>
-    </div>
+    </div> -->
     <!-- <button type="button" data-start>Start</button>
     <button type="button" data-stop>Stop</button> -->
 <p><a href="/index.html">Go back</a></p>
