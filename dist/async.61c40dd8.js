@@ -3241,13 +3241,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // -----------promises ----------------
 var promise = new Promise(function (resolve, reject) {
   var isOk = Math.random() >= 0.5;
-  if (isOk) {
-    resolve('vipolnili');
-  } else {
-    reject('ne vipolnili');
-  }
+  setTimeout(function () {
+    if (isOk) {
+      resolve("vipolnili");
+    }
+    reject("ne vipolnili");
+  }, 1000);
 });
-console.log(promise);
+promise.then(onFullfilled, onRejected);
+function onFullfilled(result) {
+  console.log(result);
+}
+function onRejected(error) {
+  console.log(error);
+}
 },{"flatpickr":"node_modules/flatpickr/dist/esm/index.js","notiflix/build/notiflix-notify-aio":"node_modules/notiflix/build/notiflix-notify-aio.js","flatpickr/dist/flatpickr.min.css":"node_modules/flatpickr/dist/flatpickr.min.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -3273,7 +3280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63898" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53785" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -256,15 +256,23 @@ import "flatpickr/dist/flatpickr.min.css";
 
 const promise = new Promise((resolve, reject) => {
   const isOk = Math.random() >= 0.5;
-  
-  if (isOk) {
-    resolve('vipolnili')
-  }
-  else {
-    reject('ne vipolnili')
-  }
+
+  setTimeout(() => {
+    if (isOk) {
+      resolve("vipolnili");
+    }
+    reject("ne vipolnili");
+  }, 1000);
 });
 
-console.log(promise);
- 
+promise.then(onFullfilled, onRejected);
+
+function onFullfilled(result) {
+    console.log(result);
+}
+  
+function onRejected(error) {
+  console.log(error);
+}
+
 
